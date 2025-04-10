@@ -155,6 +155,60 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = carousel.querySelector('.featured-collection-carousel__next');
     const itemWidth = wrapper.querySelector('.featured-collection-carousel__item').offsetWidth;
     
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
+
+    // Touch events
+    wrapper.addEventListener('touchstart', dragStart);
+    wrapper.addEventListener('touchmove', drag);
+    wrapper.addEventListener('touchend', dragEnd);
+
+    // Mouse events
+    wrapper.addEventListener('mousedown', dragStart);
+    wrapper.addEventListener('mousemove', drag);
+    wrapper.addEventListener('mouseup', dragEnd);
+    wrapper.addEventListener('mouseleave', dragEnd);
+
+    function dragStart(event) {
+      startPos = getPositionX(event);
+      isDragging = true;
+      animationID = requestAnimationFrame(animation);
+      wrapper.style.cursor = 'grabbing';
+      wrapper.style.scrollBehavior = 'auto';
+    }
+
+    function drag(event) {
+      if (!isDragging) return;
+      const currentPosition = getPositionX(event);
+      const diff = currentPosition - startPos;
+      wrapper.scrollLeft = prevTranslate - diff;
+    }
+
+    function dragEnd() {
+      isDragging = false;
+      cancelAnimationFrame(animationID);
+      wrapper.style.cursor = 'grab';
+      wrapper.style.scrollBehavior = 'smooth';
+      prevTranslate = wrapper.scrollLeft;
+    }
+
+    function getPositionX(event) {
+      return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+      if (isDragging) requestAnimationFrame(animation);
+    }
+
+    // Prevent default drag behaviors
+    wrapper.addEventListener('dragstart', (e) => e.preventDefault());
+    
+    // Add grab cursor
+    wrapper.style.cursor = 'grab';
+    
     prevBtn.addEventListener('click', () => {
       wrapper.scrollBy({
         left: -itemWidth,

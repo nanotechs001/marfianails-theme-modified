@@ -191,7 +191,16 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         "type": "range",
         "id": "per_row",
-        "label": "Products per row",
+        "label": "Total of Products to display",
+        "default": 4,
+        "min": 1,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "display_per_row",
+        "label": "Products Display per row",
         "default": 4,
         "min": 1,
         "max": 20,

@@ -6,7 +6,7 @@ div.hero__subtitle > div > div {
     max-width: 900px;
 }
 .image-wrap img:not([role=presentation]), .image-wrap svg, .image-wrap .animate-me {
-    opacity: 1;
+    opacity: 1 !important;
 }
 /* Menu Nav */
 /* Products */

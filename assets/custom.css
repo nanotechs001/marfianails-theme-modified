@@ -12,7 +12,7 @@ blockquote.testimonials-slider__text img {
     height: auto !important; 
 }
 blockquote.testimonials-slider__text{
-    padding: 0px;
+    padding: 0px !important;
   }
 /* Menu Nav */
 /* Products */

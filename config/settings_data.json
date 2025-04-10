@@ -787,10 +787,7 @@
       },
       "1598506747424": {
         "type": "featured-collection",
-        "custom_css": [
-          ".grid-product__meta > div:nth-child(2) {display: none;}",
-          ".grid-product__price {display: none;}"
-        ],
+        "custom_css": [],
         "settings": {
           "title": "Bundles and Save",
           "home_featured_products": "bundles",

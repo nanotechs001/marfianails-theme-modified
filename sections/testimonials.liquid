@@ -15,7 +15,7 @@
         <div class="testimonials-slider testimonials-per-slide-{{ section.settings.testimonials_per_slide }}" id="Testimonials-{{ section.id }}" data-count="{{ section.blocks.size }}" data-per-slide="{{ section.settings.testimonials_per_slide }}">
           {% for block in section.blocks %}
             <div
-              class="testimonials-slide--{{ block.id }}"
+              class="testimonials-slide"
               data-aos="row-of-{{ section.settings.testimonials_per_slide }}"
               {{ block.shopify_attributes }}>
               <blockquote class="testimonials-slider__text">
@@ -47,21 +47,32 @@
   {% if section.settings.divider %}</div>{% endif %}
   
   <style>
-    .testimonials-per-slide-1 .testimonials-slide--{{ block.id }} {
+    .testimonials-slider {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    
+    .testimonials-slide {
+      padding: 0 15px;
+      margin-bottom: 30px;
+    }
+    
+    .testimonials-per-slide-1 .testimonials-slide {
       width: 100%;
     }
     
-    .testimonials-per-slide-2 .testimonials-slide--{{ block.id }} {
+    .testimonials-per-slide-2 .testimonials-slide {
       width: 50%;
     }
     
-    .testimonials-per-slide-3 .testimonials-slide--{{ block.id }} {
+    .testimonials-per-slide-3 .testimonials-slide {
       width: 33.333%;
     }
     
     @media screen and (max-width: 749px) {
-      .testimonials-per-slide-2 .testimonials-slide--{{ block.id }},
-      .testimonials-per-slide-3 .testimonials-slide--{{ block.id }} {
+      .testimonials-per-slide-2 .testimonials-slide,
+      .testimonials-per-slide-3 .testimonials-slide {
         width: 100%;
       }
     }

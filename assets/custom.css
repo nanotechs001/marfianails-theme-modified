@@ -240,7 +240,9 @@ div#shopify-section-1598506673114 .text-center .slick-slider .testimonials-slide
     margin-left: 0;
     margin-right: 0;
 }
-
+.testimonials-slide {
+    padding: 0 !important;
+}
 .text-center .slick-slider .testimonials-slider__text {
     margin-left: 0;
     margin-right: 0;

@@ -739,6 +739,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p><strong>I HIGHLY RECOMMEND </strong><br/>Great nails at good prices. Bought a few sets and have not been disappointed.</p>",
+              "image": "shopify://shop_images/image-1048765430.jpg",
               "author": "Taylor Blakey"
             }
           },

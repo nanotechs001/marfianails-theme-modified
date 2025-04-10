@@ -11,6 +11,14 @@ div.hero__subtitle > div > div {
 blockquote.testimonials-slider__text img {
     height: auto !important; 
 }
+/* Testimonial */
+.text-center .testimonail-image {
+    margin-left: -25px;
+    margin-right: -25px;
+    width: calc(100% + 50px) !important;
+    max-width: unset !important;
+    margin-top: -25px;
+}
 /* Menu Nav */
 /* Products */
 div#CollectionSection-1598506747424 .page-width.page-width--flush-small {

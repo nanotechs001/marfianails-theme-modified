@@ -74,7 +74,6 @@
   position: relative;
   margin: 0 -10px;
   padding: 0 40px;
-  padding-bottom:40px;
 }
 
 .featured-collection-carousel__wrapper {
@@ -163,6 +162,33 @@ document.addEventListener('DOMContentLoaded', function() {
     let animationID = 0;
     let hasMoved = false;
     let startTime = 0;
+    let autoRotateInterval = null;
+    let isAutoRotating = false;
+
+    // Get auto-rotate settings
+    const autoRotate = {{ section.settings.auto_rotate | json }};
+    const rotateInterval = {{ section.settings.rotate_interval | json }} * 1000; // Convert to milliseconds
+
+    function startAutoRotate() {
+      if (autoRotate && !isAutoRotating) {
+        isAutoRotating = true;
+        autoRotateInterval = setInterval(() => {
+          if (!isDragging) {
+            wrapper.scrollBy({
+              left: itemWidth,
+              behavior: 'smooth'
+            });
+          }
+        }, rotateInterval);
+      }
+    }
+
+    function stopAutoRotate() {
+      if (autoRotateInterval) {
+        clearInterval(autoRotateInterval);
+        isAutoRotating = false;
+      }
+    }
 
     // Touch events
     wrapper.addEventListener('touchstart', dragStart);
@@ -191,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
       animationID = requestAnimationFrame(animation);
       wrapper.style.cursor = 'grabbing';
       wrapper.style.scrollBehavior = 'auto';
+      stopAutoRotate();
     }
 
     function drag(event) {
@@ -213,6 +240,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         event.stopPropagation();
       }
+
+      // Resume auto-rotate after drag ends
+      if (autoRotate) {
+        startAutoRotate();
+      }
     }
 
     function getPositionX(event) {
@@ -234,6 +266,10 @@ document.addEventListener('DOMContentLoaded', function() {
         left: -itemWidth,
         behavior: 'smooth'
       });
+      stopAutoRotate();
+      if (autoRotate) {
+        startAutoRotate();
+      }
     });
     
     nextBtn.addEventListener('click', () => {
@@ -241,6 +277,23 @@ document.addEventListener('DOMContentLoaded', function() {
         left: itemWidth,
         behavior: 'smooth'
       });
+      stopAutoRotate();
+      if (autoRotate) {
+        startAutoRotate();
+      }
+    });
+
+    // Start auto-rotate if enabled
+    if (autoRotate) {
+      startAutoRotate();
+    }
+
+    // Pause auto-rotate when hovering over the carousel
+    wrapper.addEventListener('mouseenter', stopAutoRotate);
+    wrapper.addEventListener('mouseleave', () => {
+      if (autoRotate) {
+        startAutoRotate();
+      }
     });
   });
 });
@@ -290,8 +343,23 @@ document.addEventListener('DOMContentLoaded', function() {
         "type": "text",
         "id": "rows",
         "label": "Rows of products",
-        "default": "1",
+        "default": "1"
       },
+      {
+        "type": "checkbox",
+        "id": "auto_rotate",
+        "label": "Enable auto-rotate",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "rotate_interval",
+        "label": "Rotation interval (seconds)",
+        "default": 5,
+        "min": 2,
+        "max": 10,
+        "step": 1
+      }
     ],
     "presets": [{
       "name": "Featured collection",

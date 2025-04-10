@@ -782,6 +782,7 @@
         "settings": {
           "title": "Customer Reviews",
           "align_text": "center",
+          "testimonials_per_slide": 2,
           "round_images": false,
           "divider": false
         }

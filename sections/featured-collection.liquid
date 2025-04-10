@@ -84,9 +84,9 @@
 }
 
 .featured-collection-carousel__item {
-  flex: 0 0 calc(100% / {{ per_row }});
+  flex: 0 0 calc(100% / {{ section.settings.display_per_row }});
   padding: 0 10px;
-  min-width: calc(100% / {{ per_row }});
+  min-width: calc(100% / {{ section.settings.display_per_row }});
 }
 
 .featured-collection-carousel__prev,

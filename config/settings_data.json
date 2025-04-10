@@ -755,6 +755,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p><strong>AMAZING AND SO EASY TO USE </strong></p><p>The colour is PERFECT!! And they’re so easy to file down to whatever length you want.</p>",
+              "image": "shopify://shop_images/image-400403800546.jpg",
               "author": "Kayla Jimenez"
             }
           },

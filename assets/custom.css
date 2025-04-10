@@ -13,8 +13,8 @@ blockquote.testimonials-slider__text img {
 }
 /* Testimonial */
 .text-center .testimonail-image {
-    margin-left: -25px;
-    margin-right: -25px;
+    margin-left: -25px !important;
+    margin-right: -25px !important;
     width: calc(100% + 50px) !important;
     max-width: unset !important;
     margin-top: -25px;

@@ -184,9 +184,7 @@
           "1598855317925",
           "1524770014057"
         ],
-        "custom_css": [
-          "div#fsb_container {display: none !important;}"
-        ],
+        "custom_css": [],
         "settings": {
           "main_menu_link_list": "homepage-menu",
           "mega_menu_images": true,
@@ -797,6 +795,7 @@
           "title": "",
           "home_featured_products": "bundles",
           "per_row": 20,
+          "display_per_row": 4,
           "divider": false,
           "rows": "1"
         }

@@ -414,12 +414,12 @@ function updateCarouselImages() {
 // Call the function to apply the changes
 let callCount = 0; // Counter to track the number of calls
 const intervalId = setInterval(() => {
-    if (callCount < 5) { // Check if it has been called less than 5 times
+    if (callCount < 15) { // Check if it has been called less than 5 times
         updateCarouselImages(); // Call the function
         callCount++; // Increment the counter
     } else {
         clearInterval(intervalId); // Stop the interval after 5 calls
     }
-}, 1000); // Interval set to 1 second
+}, 300); // Interval set to 1 second
 </script>
           

@@ -153,7 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const wrapper = carousel.querySelector('.featured-collection-carousel__wrapper');
     const prevBtn = carousel.querySelector('.featured-collection-carousel__prev');
     const nextBtn = carousel.querySelector('.featured-collection-carousel__next');
-    const itemWidth = wrapper.querySelector('.featured-collection-carousel__item').offsetWidth;
+    const items = wrapper.querySelectorAll('.featured-collection-carousel__item');
+    const itemWidth = items[0].offsetWidth;
     
     let isDragging = false;
     let startPos = 0;
@@ -165,9 +166,31 @@ document.addEventListener('DOMContentLoaded', function() {
     let autoRotateInterval = null;
     let isAutoRotating = false;
 
+    // Clone items for infinite loop
+    const itemsToClone = Math.ceil(wrapper.offsetWidth / itemWidth) + 1;
+    for (let i = 0; i < itemsToClone; i++) {
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        wrapper.appendChild(clone);
+      });
+    }
+
     // Get auto-rotate settings
     const autoRotate = {{ section.settings.auto_rotate | json }};
-    const rotateInterval = {{ section.settings.rotate_interval | json }} * 1000; // Convert to milliseconds
+    const rotateInterval = {{ section.settings.rotate_interval | json }} * 1000;
+
+    function handleInfiniteScroll() {
+      const scrollLeft = wrapper.scrollLeft;
+      const maxScroll = wrapper.scrollWidth - wrapper.offsetWidth;
+      const itemCount = items.length;
+      const totalWidth = itemWidth * itemCount;
+
+      if (scrollLeft <= itemWidth) {
+        wrapper.scrollLeft = totalWidth;
+      } else if (scrollLeft >= maxScroll - itemWidth) {
+        wrapper.scrollLeft = totalWidth - wrapper.offsetWidth;
+      }
+    }
 
     function startAutoRotate() {
       if (autoRotate && !isAutoRotating) {
@@ -178,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
               left: itemWidth,
               behavior: 'smooth'
             });
+            handleInfiniteScroll();
           }
         }, rotateInterval);
       }
@@ -200,6 +224,9 @@ document.addEventListener('DOMContentLoaded', function() {
     wrapper.addEventListener('mousemove', drag);
     wrapper.addEventListener('mouseup', dragEnd);
     wrapper.addEventListener('mouseleave', dragEnd);
+
+    // Scroll event for infinite loop
+    wrapper.addEventListener('scroll', handleInfiniteScroll);
 
     // Prevent clicks on links when dragging
     wrapper.addEventListener('click', function(e) {
@@ -235,13 +262,13 @@ document.addEventListener('DOMContentLoaded', function() {
       wrapper.style.scrollBehavior = 'smooth';
       prevTranslate = wrapper.scrollLeft;
 
-      // If the drag was very quick (less than 200ms) and we moved, it was probably a drag
       if (Date.now() - startTime < 200 && hasMoved) {
         event.preventDefault();
         event.stopPropagation();
       }
 
-      // Resume auto-rotate after drag ends
+      handleInfiniteScroll();
+
       if (autoRotate) {
         startAutoRotate();
       }
@@ -266,6 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
         left: -itemWidth,
         behavior: 'smooth'
       });
+      handleInfiniteScroll();
       stopAutoRotate();
       if (autoRotate) {
         startAutoRotate();
@@ -277,11 +305,15 @@ document.addEventListener('DOMContentLoaded', function() {
         left: itemWidth,
         behavior: 'smooth'
       });
+      handleInfiniteScroll();
       stopAutoRotate();
       if (autoRotate) {
         startAutoRotate();
       }
     });
+
+    // Initialize scroll position
+    wrapper.scrollLeft = itemWidth * items.length;
 
     // Start auto-rotate if enabled
     if (autoRotate) {

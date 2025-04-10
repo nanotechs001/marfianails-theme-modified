@@ -747,6 +747,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p><strong>NEW FAVE</strong><br/>Item exactly as described and easy peasy to apply! They are perfect for an RN like me who can't have polish on for work.</p>",
+              "image": "shopify://shop_images/image-70571687899.jpg",
               "author": "Erin Thompson"
             }
           },
@@ -782,7 +783,6 @@
         "settings": {
           "title": "Customer Reviews",
           "align_text": "center",
-          "testimonials_per_slide": 2,
           "round_images": false,
           "divider": false
         }

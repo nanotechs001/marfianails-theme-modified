@@ -782,7 +782,7 @@
         "settings": {
           "title": "Customer Reviews",
           "align_text": "center",
-          "round_images": true,
+          "round_images": false,
           "divider": false
         }
       },

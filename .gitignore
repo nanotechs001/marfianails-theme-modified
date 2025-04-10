@@ -1,0 +1,23 @@
+# Generated assets
+assets/gift-card.scss
+assets/ico-select-drawer.svg
+assets/ico-select-menu.svg
+assets/ico-select.svg
+assets/theme.scss
+
+# Shopify generated files
+*.scss
+*.css
+*.js
+*.js.map
+*.css.map
+*.scss.map
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 

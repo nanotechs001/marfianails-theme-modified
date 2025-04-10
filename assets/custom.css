@@ -11,9 +11,6 @@ div.hero__subtitle > div > div {
 blockquote.testimonials-slider__text img {
     height: auto !important; 
 }
-blockquote.testimonials-slider__text{
-    padding: 0px !important;
-  }
 /* Menu Nav */
 /* Products */
 div#CollectionSection-1598506747424 .page-width.page-width--flush-small {

@@ -704,19 +704,6 @@
           "recent_count": 5
         }
       },
-      "1598506520048": {
-        "type": "text-and-image",
-        "settings": {
-          "image_width": 100,
-          "subtitle": "",
-          "title": "BE READY FOR EVERY EVENT AND OCCASION, EVERY TIME.",
-          "text": "<p>Elevate your nails with a new length, shape and style with our instant, flawless manicures.</p><p></p><p>These handbag essentials allow you to get that salon look on the go-go! Wear them for a few days or a few hours. Adjust them to your style, outfit or your mood of the day! Mix and match, the choices are yours.<br/><br/></p><p></p>",
-          "button_label": "SHOP NOW",
-          "button_link": "shopify://products/tan-by-me",
-          "layout": "left",
-          "divider": false
-        }
-      },
       "1598506617521": {
         "type": "text-and-image",
         "settings": {
@@ -1419,6 +1406,26 @@
           "full_width": false,
           "space_around": true
         }
+      },
+      "advanced_content_Yxamnx": {
+        "type": "advanced-content",
+        "blocks": {
+          "html_NqxqwF": {
+            "type": "html",
+            "settings": {
+              "code": "<h2>BE READY FOR EVERY EVENT AND OCCASION, EVERY TIME.</h2><p>Elevate your nails with a new length, shape and style with our instant, flawless manicures. <br><br>These handbag essentials allow you to get that salon look on the go-go! Wear them for a few days or a few hours. Adjust them to your style, outfit or your mood of the day! Mix and match, the choices are yours.</p>",
+              "width": "100%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "html_NqxqwF"
+        ],
+        "settings": {
+          "full_width": false,
+          "space_around": true
+        }
       }
     },
     "content_for_index": [
@@ -1431,7 +1438,7 @@
       "advanced_content_YEwX8M",
       "promo_grid_4p7Wbq",
       "1598506673114",
-      "1598506520048",
+      "advanced_content_Yxamnx",
       "1598506617521",
       "1598610102634",
       "1598610217059",

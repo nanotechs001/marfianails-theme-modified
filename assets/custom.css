@@ -132,9 +132,6 @@ div#shopify-section-1598526815360 .animation-contents {
 div#shopify-section-1598506747424 {
     padding-top: 0 !important;
 }
-img.grid-product__image {
-    padding: 20px;
-}
 .hero__image-wrapper:before, .hero__media:before {
     content: "";
     position: absolute;

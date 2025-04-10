@@ -47,6 +47,9 @@ div#shopify-section-1598506747424 {
   div#shopify-section-1598506673114 .page-width.text-center {
     padding: 0px 2px;
 }
+  .rte-setting.text-spacing {
+    min-height: 110px;
+}
 }
 @media only screen and (max-width: 768px) {
 

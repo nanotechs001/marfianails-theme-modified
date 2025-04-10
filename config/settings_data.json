@@ -792,12 +792,11 @@
           ".grid-product__price {display: none;}"
         ],
         "settings": {
-          "title": "",
+          "title": "Bundles and Save",
           "home_featured_products": "bundles",
           "per_row": 20,
           "display_per_row": 4,
           "divider": false,
-          "rows": "1",
           "auto_rotate": true,
           "rotate_interval": 5
         }
@@ -1288,26 +1287,6 @@
           "enable_gutter": true
         }
       },
-      "advanced_content_efpp8j": {
-        "type": "advanced-content",
-        "blocks": {
-          "html_mzAD9J": {
-            "type": "html",
-            "settings": {
-              "code": "<center><h2>Bundles and Save</h2></center>",
-              "width": "100%",
-              "alignment": "center"
-            }
-          }
-        },
-        "block_order": [
-          "html_mzAD9J"
-        ],
-        "settings": {
-          "full_width": false,
-          "space_around": true
-        }
-      },
       "promo_grid_89YH7w": {
         "type": "promo-grid",
         "blocks": {
@@ -1443,7 +1422,6 @@
     "content_for_index": [
       "1598595117469",
       "1598526815360",
-      "advanced_content_efpp8j",
       "1598506747424",
       "1615439274870af61c",
       "promo_grid_89YH7w",

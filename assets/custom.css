@@ -19,6 +19,9 @@ blockquote.testimonials-slider__text img {
     max-width: unset !important;
     margin-top: -25px;
 }
+ul.slick-dots {
+    display: none;
+}
 /* Menu Nav */
 /* Products */
 div#CollectionSection-1598506747424 .page-width.page-width--flush-small {

@@ -161,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let prevTranslate = 0;
     let animationID = 0;
     let hasMoved = false;
+    let startTime = 0;
 
     // Touch events
     wrapper.addEventListener('touchstart', dragStart);
@@ -173,10 +174,19 @@ document.addEventListener('DOMContentLoaded', function() {
     wrapper.addEventListener('mouseup', dragEnd);
     wrapper.addEventListener('mouseleave', dragEnd);
 
+    // Prevent clicks on links when dragging
+    wrapper.addEventListener('click', function(e) {
+      if (isDragging || hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
     function dragStart(event) {
       startPos = getPositionX(event);
       isDragging = true;
       hasMoved = false;
+      startTime = Date.now();
       animationID = requestAnimationFrame(animation);
       wrapper.style.cursor = 'grabbing';
       wrapper.style.scrollBehavior = 'auto';
@@ -197,14 +207,11 @@ document.addEventListener('DOMContentLoaded', function() {
       wrapper.style.scrollBehavior = 'smooth';
       prevTranslate = wrapper.scrollLeft;
 
-      // If we haven't moved much, allow the click to proceed
-      if (!hasMoved) {
-        return;
+      // If the drag was very quick (less than 200ms) and we moved, it was probably a drag
+      if (Date.now() - startTime < 200 && hasMoved) {
+        event.preventDefault();
+        event.stopPropagation();
       }
-
-      // Prevent the click event if we were dragging
-      event.preventDefault();
-      event.stopPropagation();
     }
 
     function getPositionX(event) {

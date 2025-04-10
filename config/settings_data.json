@@ -796,11 +796,9 @@
         "settings": {
           "title": "",
           "home_featured_products": "bundles",
-          "per_row": 4,
-          "rows": 2,
-          "mobile_scrollable": false,
-          "view_all": false,
-          "divider": false
+          "per_row": 20,
+          "divider": false,
+          "rows": "1"
         }
       },
       "1598526815360": {
@@ -1938,8 +1936,6 @@
           "type": "featured-collection",
           "settings": {
             "per_row": 4,
-            "rows": 1,
-            "view_all": true,
             "divider": false
           }
         },
@@ -2470,7 +2466,6 @@
         },
         "1523380258742": {
           "type": "featured-collections",
-          "disabled": true,
           "blocks": {
             "1523380258742-0": {
               "type": "collection",
@@ -2505,6 +2500,7 @@
             "1524685816171",
             "1524685829380"
           ],
+          "disabled": true,
           "settings": {
             "divider": false,
             "per_row": 3,
@@ -2527,8 +2523,6 @@
           "type": "featured-collection",
           "settings": {
             "per_row": 4,
-            "rows": 1,
-            "view_all": true,
             "divider": false
           }
         },
@@ -2543,8 +2537,6 @@
           "type": "featured-collection",
           "settings": {
             "per_row": 3,
-            "rows": 1,
-            "view_all": true,
             "divider": false
           }
         },
@@ -3159,8 +3151,6 @@
           "type": "featured-collection",
           "settings": {
             "per_row": 4,
-            "rows": 1,
-            "view_all": false,
             "divider": false
           }
         },

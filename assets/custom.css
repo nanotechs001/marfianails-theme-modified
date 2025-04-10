@@ -37,6 +37,9 @@ div#shopify-section-1598506747424 {
     background: #FFEDED;
 }
 /* Mega Menu dropdown */
+div#shopify-section-advanced_content_Yxamnx .index-section {
+    padding-top: 0;
+}
 @media only screen and (min-width: 769px) {
 .site-nav__dropdown {
     background-color: #00000000 !important;

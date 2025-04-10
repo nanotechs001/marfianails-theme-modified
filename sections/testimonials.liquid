@@ -22,16 +22,11 @@
                 {% if block.settings.image != blank %}
                   <div
                     class="image-wrap text-spacing testimonail-image{% if section.settings.round_images %} testimonail-image--round{% endif %}">
-                    {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-                    <img class="lazyload"
-                        data-src="{{ img_url }}"
-                        data-widths="[180, 360, 540, 720, 900, 1080]"
-                        data-aspectratio="{{ block.settings.image.aspect_ratio }}"
-                        data-sizes="auto"
-                        alt="{{ block.settings.image.alt }}">
-                    <noscript>
-                      <img class="lazyloaded" src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}">
-                    </noscript>
+                    <img src="{{ block.settings.image | img_url: 'master' }}"
+                         alt="{{ block.settings.image.alt | escape }}"
+                         width="{{ block.settings.image.width }}"
+                         height="{{ block.settings.image.height }}"
+                         loading="lazy">
                   </div>
                 {% endif %}
                 <span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-quote" viewBox="0 0 41 35"><path d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z" fill="#000" fill-rule="evenodd"/></svg></span>

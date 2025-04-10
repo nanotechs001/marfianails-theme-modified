@@ -20,7 +20,7 @@ blockquote.testimonials-slider__text img {
     margin-top: -25px;
 }
 ul.slick-dots {
-    display: none;
+    display: none !important;
 }
 /* Menu Nav */
 /* Products */

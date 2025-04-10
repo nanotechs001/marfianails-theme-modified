@@ -178,13 +178,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let isAutoRotating = false;
 
     // Clone items for infinite loop
-    const itemsToClone = Math.ceil(wrapper.offsetWidth / itemWidth) + 1;
-    for (let i = 0; i < itemsToClone; i++) {
-      items.forEach(item => {
-        const clone = item.cloneNode(true);
-        wrapper.appendChild(clone);
-      });
-    }
+    // const itemsToClone = Math.ceil(wrapper.offsetWidth / itemWidth) + 1;
+    // for (let i = 0; i < itemsToClone; i++) {
+    //   items.forEach(item => {
+    //     const clone = item.cloneNode(true);
+    //     wrapper.appendChild(clone);
+    //   });
+    // }
 
     // Get auto-rotate settings
     const autoRotate = {{ section.settings.auto_rotate | json }};

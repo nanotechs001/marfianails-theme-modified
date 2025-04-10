@@ -5,6 +5,9 @@
 div.hero__subtitle > div > div {
     max-width: 900px;
 }
+.image-wrap img:not([role=presentation]), .image-wrap svg, .image-wrap .animate-me {
+    opacity: 1;
+}
 /* Menu Nav */
 /* Products */
 div#CollectionSection-1598506747424 .page-width.page-width--flush-small {

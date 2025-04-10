@@ -796,7 +796,7 @@
           "show_price": false,
           "divider": false,
           "auto_rotate": true,
-          "rotate_interval": 5
+          "rotate_interval": 10
         }
       },
       "1598526815360": {

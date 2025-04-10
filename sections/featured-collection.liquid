@@ -45,7 +45,7 @@
         {% else %}
           {% for product in collections[section.settings.home_featured_products].products limit: product_limit %}
             <div class="featured-collection-carousel__item">
-              {% include 'product-grid-item', show_price: section.settings.show_price %}
+              {% include 'product-grid-item' %}
             </div>
           {% endfor %}
         {% endif %}
@@ -70,6 +70,15 @@
 {% if section.settings.divider %}</div>{% endif %}
 
 <style>
+{% unless section.settings.show_price %}
+.grid-product__meta > div:nth-child(2) {
+    display: none;
+}
+.grid-product__price {
+    display: none;
+}
+{% endunless %}
+
 .featured-collection-carousel {
   position: relative;
   margin: 0 -10px;

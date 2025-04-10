@@ -422,8 +422,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 // Delay the execution of updateCarouselImages by 1 second
+// Array containing the new image URLs
+var imageUrls = [
+    'https://cdn.shopify.com/s/files/1/0464/0427/2291/files/image_3.png?v=1744265728',
+    'https://cdn.shopify.com/s/files/1/0464/0427/2291/files/image_1.png?v=1744265728',
+    'https://cdn.shopify.com/s/files/1/0464/0427/2291/files/iamge_2.png?v=1744265728',
+    // Add more URLs as needed
+];
+
+// Function to update the carousel images
+function updateCarouselImages() {
+    // Select all the images in the slider
+    const carouselImages = document.querySelectorAll('.featured-collection-carousel .featured-collection-carousel__item .grid-product__image');
+    
+    // Loop through the images and assign the new ones
+    carouselImages.forEach((img, index) => {
+        // Calculate the image index from the array, looping back when necessary
+        const newImageIndex = index % imageUrls.length;
+        img.src = imageUrls[newImageIndex];
+        img.srcset = imageUrls[newImageIndex];
+    }); // Correctly closed the forEach function here
+}
+
+// Call the function to apply the changes
 setTimeout(() => {
     updateCarouselImages();
-}, 3000);
+},2000);
 </script>
           

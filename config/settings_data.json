@@ -1384,26 +1384,6 @@
           "space_around": true
         }
       },
-      "advanced_content_Yxamnx": {
-        "type": "advanced-content",
-        "blocks": {
-          "html_NqxqwF": {
-            "type": "html",
-            "settings": {
-              "code": "<h2>BE READY FOR EVERY EVENT AND OCCASION, EVERY TIME.</h2><p>Elevate your nails with a new length, shape and style with our instant, flawless manicures. <br><br>These handbag essentials allow you to get that salon look on the go-go! Wear them for a few days or a few hours. Adjust them to your style, outfit or your mood of the day! Mix and match, the choices are yours.</p>",
-              "width": "100%",
-              "alignment": "center"
-            }
-          }
-        },
-        "block_order": [
-          "html_NqxqwF"
-        ],
-        "settings": {
-          "full_width": false,
-          "space_around": true
-        }
-      },
       "advanced_content_kkiUim": {
         "type": "advanced-content",
         "blocks": {
@@ -1445,7 +1425,6 @@
       "advanced_content_YEwX8M",
       "promo_grid_4p7Wbq",
       "1598506673114",
-      "advanced_content_Yxamnx",
       "1598610102634",
       "1598610217059",
       "advanced_content_kkiUim"

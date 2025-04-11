@@ -917,110 +917,6 @@
           "grid": "4"
         }
       },
-      "1598610102634": {
-        "type": "slideshow",
-        "blocks": {
-          "1598610102634-0": {
-            "type": "image",
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 60,
-              "subheading": "",
-              "link": "shopify://collections/premium-press-on-nails",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/ljgj_03dbd9ec-dfeb-40c7-a4d8-2ff3e2a9aba0.png",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1598610102634-0"
-        ],
-        "disabled": true,
-        "settings": {
-          "section_height": "450px",
-          "mobile_height": "300px",
-          "parallax": false,
-          "style": "minimal",
-          "autoplay": true,
-          "autoplay_speed": 5
-        }
-      },
-      "1598610217059": {
-        "type": "mbslideshow",
-        "blocks": {
-          "1598610217059-0": {
-            "type": "image",
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "shopify://collections/premium-press-on-nails",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/0AE6299D-B40E-473F-8EF3-045341015EAD.jpeg",
-              "focal_point": "center center"
-            }
-          },
-          "1598860050368": {
-            "type": "image",
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "shopify://collections/premium-press-on-nails",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/4A0602D2-93B3-44FC-BE62-7585B80E19CA.jpeg",
-              "focal_point": "center center"
-            }
-          },
-          "1600683968545": {
-            "type": "image",
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/74762A60-55B7-4120-A20C-D5B6CF6DEAE3.jpeg",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1598610217059-0",
-          "1598860050368",
-          "1600683968545"
-        ],
-        "disabled": true,
-        "settings": {
-          "section_height": "natural",
-          "mobile_height": "auto",
-          "parallax": false,
-          "style": "minimal",
-          "autoplay": true,
-          "autoplay_speed": 5
-        }
-      },
       "featured_collections_TcdTPr": {
         "type": "featured-collections",
         "blocks": {
@@ -1281,8 +1177,6 @@
       "advanced_content_YEwX8M",
       "promo_grid_4p7Wbq",
       "1598506673114",
-      "1598610102634",
-      "1598610217059",
       "advanced_content_kkiUim"
     ],
     "blocks": {

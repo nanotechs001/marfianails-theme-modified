@@ -901,15 +901,6 @@
           "autoplay_speed": 6
         }
       },
-      "1598527584790": {
-        "type": "instafeed",
-        "settings": {
-          "heading_font": "helvetica_n4",
-          "heading_size": 25,
-          "feed_width": 80,
-          "html_area": "<!-- -->"
-        }
-      },
       "password-header": {
         "type": "password-header",
         "settings": {
@@ -1472,7 +1463,6 @@
       "1598506617521",
       "1598610102634",
       "1598610217059",
-      "1598527584790",
       "advanced_content_kkiUim"
     ],
     "blocks": {

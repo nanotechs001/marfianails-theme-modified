@@ -213,10 +213,7 @@ div#shopify-section-promo_grid_89YH7w .promo-grid__container:not(.promo-grid__co
     background: linear-gradient(0deg, rgb(0 0 0 / 81%) 0%, rgba(0, 0, 0, 0) 100%) !important;
     opacity: .8 !important;
 }
-div#shopify-section-advanced_content_YEwX8M .index-section {
-    background: #fff;
-    padding-bottom: 15px;
-}
+
 div#shopify-section-promo_grid_4p7Wbq {
     padding-bottom: 90px;
 }
@@ -274,4 +271,9 @@ div#shopify-section-1598506673114 {
 }
 div#shopify-section-advanced_content_Yxamnx .index-section {
     padding-top: 5%;
+}
+
+div#shopify-section-advanced_content_YEwX8M .index-section {
+    background: #FFECEC;
+    padding-bottom: 15px;
 }

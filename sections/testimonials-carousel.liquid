@@ -1,0 +1,481 @@
+{%- assign product_limit = 99 -%}
+{%- assign collection = collections[section.settings.home_featured_products] -%}
+
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div
+  id="TestimonialsSection-{{ section.id }}"
+  style="padding-bottom: 5%; padding-top: 5%;"
+  data-section-id="{{ section.id }}"
+  data-section-type="testimonials-carousel">
+  {% if section.settings.title != blank %}
+    <div class="page-width">
+      <div class="section-header{% if section.settings.view_all %}{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}{% endif %}">
+        <h2 class="section-header__title">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="page-width-testimonials-slider">
+    <div class="testimonials-carousel" data-carousel>
+      <div class="testimonials-carousel__wrapper">
+        {% for block in section.blocks %}
+          <div class="testimonials-carousel__item" {{ block.shopify_attributes }}>
+            <div class="testimonial-card">
+              {% if block.settings.image != blank %}
+                <div class="testimonial-image">
+                  <img src="{{ block.settings.image | img_url: 'master' }}"
+                       alt="{{ block.settings.image.alt | escape }}"
+                       width="{{ block.settings.image.width }}"
+                       height="{{ block.settings.image.height }}"
+                       loading="lazy">
+                </div>
+              {% endif %}
+              <div class="testimonial-content">
+                <span class="quote-icon"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-quote" viewBox="0 0 41 35"><path d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z" fill="#000" fill-rule="evenodd"/></svg></span>
+                <div class="testimonial-text">{{ block.settings.testimonial }}</div>
+                <div class="testimonial-author">{{ block.settings.author }}</div>
+                {% if block.settings.rating != blank %}
+                  <div class="testimonial-rating">
+                    {% for i in (1..5) %}
+                      {% if i <= block.settings.rating %}
+                        <span class="star filled">★</span>
+                      {% else %}
+                        <span class="star">☆</span>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <button class="testimonials-carousel__prev" aria-label="{{ 'general.slider.previous_slide' | t }}">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.929 284.929"><path d="M282.082 76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856-2.471 0-4.661.95-6.563 2.856L142.466 174.441 30.262 62.241c-1.903-1.906-4.093-2.856-6.567-2.856-2.475 0-4.665.95-6.567 2.856L2.856 76.515C.95 78.417 0 80.607 0 83.082c0 2.473.953 4.663 2.856 6.565l133.043 133.046c1.902 1.903 4.093 2.854 6.567 2.854s4.661-.951 6.562-2.854l133.054-133.046c1.902-1.903 2.847-4.093 2.847-6.565 0-2.475-.944-4.665-2.847-6.567z"/></svg>
+      </button>
+      <button class="testimonials-carousel__next" aria-label="{{ 'general.slider.next_slide' | t }}">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.929 284.929"><path d="M282.082 76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856-2.471 0-4.661.95-6.563 2.856L142.466 174.441 30.262 62.241c-1.903-1.906-4.093-2.856-6.567-2.856-2.475 0-4.665.95-6.567 2.856L2.856 76.515C.95 78.417 0 80.607 0 83.082c0 2.473.953 4.663 2.856 6.565l133.043 133.046c1.902 1.903 4.093 2.854 6.567 2.854s4.661-.951 6.562-2.854l133.054-133.046c1.902-1.903 2.847-4.093 2.847-6.565 0-2.475-.944-4.665-2.847-6.567z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+
+<style>
+.testimonials-carousel {
+  position: relative;
+}
+
+.testimonials-carousel__wrapper {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonials-carousel__item {
+  flex: 0 0 calc(100% / {{ section.settings.display_per_slide }});
+  padding: 0 15px;
+  min-width: calc(100% / {{ section.settings.display_per_slide }});
+}
+
+.testimonial-card {
+  background: {{ section.settings.card_background }};
+  padding: 30px;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-icon {
+  margin-bottom: 20px;
+}
+
+.quote-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: {{ section.settings.quote_color }};
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: {{ section.settings.text_color }};
+}
+
+.testimonial-author {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: {{ section.settings.author_color }};
+}
+
+.testimonial-rating {
+  margin-top: 10px;
+}
+
+.star {
+  color: {{ section.settings.rating_color }};
+  font-size: 20px;
+  margin: 0 2px;
+}
+
+.star.filled {
+  color: {{ section.settings.rating_color }};
+}
+
+.testimonials-carousel__prev,
+.testimonials-carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.testimonials-carousel__prev {
+  left: 22px;
+}
+
+.testimonials-carousel__next {
+  right: 22px;
+}
+
+.testimonials-carousel__prev .icon,
+.testimonials-carousel__next .icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 769px) {
+  .testimonials-carousel__item {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousels = document.querySelectorAll('[data-carousel]');
+  
+  carousels.forEach(carousel => {
+    const wrapper = carousel.querySelector('.testimonials-carousel__wrapper');
+    const prevBtn = carousel.querySelector('.testimonials-carousel__prev');
+    const nextBtn = carousel.querySelector('.testimonials-carousel__next');
+    const items = wrapper.querySelectorAll('.testimonials-carousel__item');
+    const itemWidth = items[0].offsetWidth;
+    
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
+    let hasMoved = false;
+    let startTime = 0;
+    let autoRotateInterval = null;
+    let isAutoRotating = false;
+
+    // Get auto-rotate settings
+    const autoRotate = {{ section.settings.auto_rotate | json }};
+    const rotateInterval = {{ section.settings.rotate_interval | json }} * 1000;
+
+    function startAutoRotate() {
+      if (autoRotate && !isAutoRotating) {
+        isAutoRotating = true;
+        autoRotateInterval = setInterval(() => {
+          if (!isDragging) {
+            wrapper.scrollBy({
+              left: itemWidth,
+              behavior: 'smooth'
+            });
+          }
+        }, rotateInterval);
+      }
+    }
+
+    function stopAutoRotate() {
+      if (autoRotateInterval) {
+        clearInterval(autoRotateInterval);
+        isAutoRotating = false;
+      }
+    }
+
+    // Touch events
+    wrapper.addEventListener('touchstart', dragStart);
+    wrapper.addEventListener('touchmove', drag);
+    wrapper.addEventListener('touchend', dragEnd);
+
+    // Mouse events
+    wrapper.addEventListener('mousedown', dragStart);
+    wrapper.addEventListener('mousemove', drag);
+    wrapper.addEventListener('mouseup', dragEnd);
+    wrapper.addEventListener('mouseleave', dragEnd);
+
+    // Prevent clicks on links when dragging
+    wrapper.addEventListener('click', function(e) {
+      if (isDragging || hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    function dragStart(event) {
+      startPos = getPositionX(event);
+      isDragging = true;
+      hasMoved = false;
+      startTime = Date.now();
+      animationID = requestAnimationFrame(animation);
+      wrapper.style.cursor = 'grabbing';
+      wrapper.style.scrollBehavior = 'auto';
+      stopAutoRotate();
+    }
+
+    function drag(event) {
+      if (!isDragging) return;
+      const currentPosition = getPositionX(event);
+      const diff = currentPosition - startPos;
+      wrapper.scrollLeft = prevTranslate - diff;
+      hasMoved = true;
+    }
+
+    function dragEnd(event) {
+      isDragging = false;
+      cancelAnimationFrame(animationID);
+      wrapper.style.cursor = 'grab';
+      wrapper.style.scrollBehavior = 'smooth';
+      
+      // Calculate the nearest snap position
+      const snapPosition = Math.round(wrapper.scrollLeft / itemWidth) * itemWidth;
+      wrapper.scrollLeft = snapPosition;
+      prevTranslate = snapPosition;
+
+      if (Date.now() - startTime < 200 && hasMoved) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      if (autoRotate) {
+        startAutoRotate();
+      }
+    }
+
+    function getPositionX(event) {
+      return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+      if (isDragging) requestAnimationFrame(animation);
+    }
+
+    // Prevent default drag behaviors
+    wrapper.addEventListener('dragstart', (e) => e.preventDefault());
+    
+    // Add grab cursor
+    wrapper.style.cursor = 'grab';
+    
+    prevBtn.addEventListener('click', () => {
+      wrapper.scrollBy({
+        left: -itemWidth,
+        behavior: 'smooth'
+      });
+      stopAutoRotate();
+      if (autoRotate) {
+        startAutoRotate();
+      }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      wrapper.scrollBy({
+        left: itemWidth,
+        behavior: 'smooth'
+      });
+      stopAutoRotate();
+      if (autoRotate) {
+        startAutoRotate();
+      }
+    });
+
+    // Start auto-rotate if enabled
+    if (autoRotate) {
+      startAutoRotate();
+    }
+
+    // Pause auto-rotate when hovering over the carousel
+    wrapper.addEventListener('mouseenter', stopAutoRotate);
+    wrapper.addEventListener('mouseleave', () => {
+      if (autoRotate) {
+        startAutoRotate();
+      }
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials Carousel",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Customer Testimonials"
+    },
+    {
+      "type": "range",
+      "id": "display_per_slide",
+      "label": "Testimonials per slide",
+      "default": 3,
+      "min": 1,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "Enable auto-rotate",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "rotate_interval",
+      "label": "Rotation interval (seconds)",
+      "default": 5,
+      "min": 2,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "Show section divider",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "author_color",
+      "label": "Author color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote icon color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "rating_color",
+      "label": "Rating stars color",
+      "default": "#ffd700"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Profile image"
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial",
+          "label": "Testimonial text",
+          "default": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author name",
+          "default": "Customer name"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "default": 5,
+          "min": 0,
+          "max": 5,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Carousel",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

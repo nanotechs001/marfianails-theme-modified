@@ -917,115 +917,6 @@
           "grid": "4"
         }
       },
-      "1598595117469": {
-        "type": "mbslideshow",
-        "blocks": {
-          "a2fe4416-a0af-43e0-94f1-aabfbec22ab9": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "shopify://collections/nailcation-press-on-nails",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/MOBILE_-_HOMEPAGE_-_MB_1.png",
-              "focal_point": "center center"
-            }
-          },
-          "77ef7b28-885f-49df-9fb7-61278613f989": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "shopify://collections/everyday-press-on-nails-1",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/3._NAIL_5.png",
-              "focal_point": "center center"
-            }
-          },
-          "8aabdbe7-bb87-4a85-ab04-bd2f9270816d": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 44,
-              "subheading": "Shop Now",
-              "link": "shopify://collections/nailcation-press-on-nails",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "#a26464",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/image_b6c32a7f-dcbd-4b06-ac71-195ed1fbbf98.jpg",
-              "focal_point": "center center"
-            }
-          },
-          "66929ec0-3a4c-43dd-9fd4-5391b7b321fb": {
-            "type": "image",
-            "disabled": true,
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/Mobile.jpg",
-              "focal_point": "center center"
-            }
-          },
-          "5965650a-1f37-4548-b7fd-ce229e25ae51": {
-            "type": "image",
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "mailto:contact@marfiabeauty.com",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/OCT_-_MOB_BANNER_Instagram_Post_2.jpg",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "a2fe4416-a0af-43e0-94f1-aabfbec22ab9",
-          "77ef7b28-885f-49df-9fb7-61278613f989",
-          "8aabdbe7-bb87-4a85-ab04-bd2f9270816d",
-          "66929ec0-3a4c-43dd-9fd4-5391b7b321fb",
-          "5965650a-1f37-4548-b7fd-ce229e25ae51"
-        ],
-        "settings": {
-          "section_height": "natural",
-          "mobile_height": "auto",
-          "parallax": false,
-          "style": "bars",
-          "autoplay": true,
-          "autoplay_speed": 5
-        }
-      },
       "1598610102634": {
         "type": "slideshow",
         "blocks": {
@@ -1416,7 +1307,6 @@
       }
     },
     "content_for_index": [
-      "1598595117469",
       "1598526815360",
       "1598506747424",
       "1615439274870af61c",

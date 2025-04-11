@@ -309,7 +309,7 @@ div#CollectionAjaxResult .grid {
 #shopify-section-advanced_content_kkiUim > div > div.custom__item.small--one-whole.one-half.align--top-middle {
     margin-bottom: 15px;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (max-width: 769px) {
 .hero--100vh {
     height: 59vh !important;
 }

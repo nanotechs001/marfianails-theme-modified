@@ -283,3 +283,6 @@ div#shopify-section-promo_grid_4p7Wbq{
 div#shopify-section-advanced_content_YEwX8M .index-section {
     padding-bottom: 0;
 }
+#shopify-section-advanced_content_kkiUim > div > div.custom__item.small--one-whole.one-half.align--center {
+    padding: 6%;
+}

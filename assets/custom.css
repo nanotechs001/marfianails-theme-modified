@@ -318,3 +318,10 @@ div#CollectionAjaxResult .grid {
     height: 59vh !important;
 }
 }
+@media only screen and (min-width: 769px) {
+
+.slick-initialized .slick-slide {
+    display: block;
+    max-width: 352px;
+}
+}

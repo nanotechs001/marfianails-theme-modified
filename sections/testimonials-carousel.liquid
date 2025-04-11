@@ -72,7 +72,6 @@
     .testimonials-carousel__wrapper {
       display: flex;
       transition: transform 0.3s ease-out;
-      will-change: transform;
     }
     
     .testimonials-carousel__item {
@@ -201,33 +200,34 @@
         const items = wrapper.querySelectorAll('.testimonials-carousel__item');
         const itemWidth = items[0].offsetWidth;
         const itemsPerSlide = {{ section.settings.display_per_slide }};
-        let currentPosition = 0;
+        let currentIndex = 0;
         let autoRotateInterval = null;
         const autoRotate = {{ section.settings.auto_rotate | json }};
         const rotateInterval = {{ section.settings.rotate_interval | json }} * 1000;
     
-        function updatePosition() {
-          wrapper.style.transform = `translateX(-${currentPosition}px)`;
+        function updateCarousel() {
+          const offset = -currentIndex * itemWidth * itemsPerSlide;
+          wrapper.style.transform = `translateX(${offset}px)`;
         }
     
         function nextSlide() {
-          const maxPosition = (items.length - itemsPerSlide) * itemWidth;
-          if (currentPosition < maxPosition) {
-            currentPosition += itemWidth * itemsPerSlide;
+          const maxIndex = Math.ceil(items.length / itemsPerSlide) - 1;
+          if (currentIndex < maxIndex) {
+            currentIndex++;
           } else {
-            currentPosition = 0;
+            currentIndex = 0;
           }
-          updatePosition();
+          updateCarousel();
         }
     
         function prevSlide() {
-          const maxPosition = (items.length - itemsPerSlide) * itemWidth;
-          if (currentPosition > 0) {
-            currentPosition -= itemWidth * itemsPerSlide;
+          const maxIndex = Math.ceil(items.length / itemsPerSlide) - 1;
+          if (currentIndex > 0) {
+            currentIndex--;
           } else {
-            currentPosition = maxPosition;
+            currentIndex = maxIndex;
           }
-          updatePosition();
+          updateCarousel();
         }
     
         function startAutoRotate() {
@@ -271,24 +271,18 @@
     
         wrapper.addEventListener('touchend', (e) => {
           touchEndX = e.changedTouches[0].clientX;
-          handleSwipe();
-          if (autoRotate) {
-            startAutoRotate();
-          }
-        });
-    
-        function handleSwipe() {
-          const swipeThreshold = 50;
           const diff = touchStartX - touchEndX;
-    
-          if (Math.abs(diff) > swipeThreshold) {
+          if (Math.abs(diff) > 50) {
             if (diff > 0) {
               nextSlide();
             } else {
               prevSlide();
             }
           }
-        }
+          if (autoRotate) {
+            startAutoRotate();
+          }
+        });
     
         // Mouse events
         let mouseStartX = 0;
@@ -303,7 +297,8 @@
         wrapper.addEventListener('mousemove', (e) => {
           if (!isDragging) return;
           const diff = mouseStartX - e.clientX;
-          wrapper.style.transform = `translateX(-${currentPosition + diff}px)`;
+          const offset = -currentIndex * itemWidth * itemsPerSlide + diff;
+          wrapper.style.transform = `translateX(${offset}px)`;
         });
     
         wrapper.addEventListener('mouseup', (e) => {
@@ -317,7 +312,7 @@
               prevSlide();
             }
           } else {
-            updatePosition();
+            updateCarousel();
           }
           if (autoRotate) {
             startAutoRotate();
@@ -327,7 +322,7 @@
         wrapper.addEventListener('mouseleave', () => {
           if (isDragging) {
             isDragging = false;
-            updatePosition();
+            updateCarousel();
             if (autoRotate) {
               startAutoRotate();
             }

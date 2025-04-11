@@ -1,11 +1,11 @@
-{%- assign per_row = section.settings.per_row -%}
-{%- assign product_limit = per_row | times: section.settings.rows -%}
+{%- assign product_limit = 99 -%}
 {%- assign collection = collections[section.settings.home_featured_products] -%}
 
 {% if section.settings.divider %}<div class="section--divider">{% endif %}
 
 <div
   id="CollectionSection-{{ section.id }}"
+  style="padding-bottom: 5%; padding-top: 5%;"
   data-section-id="{{ section.id }}"
   data-section-type="collection-template">
   {% if section.settings.title != blank %}
@@ -18,7 +18,7 @@
     </div>
   {% endif %}
 
-  <div class="page-width">
+  <div class="page-width-collections-slider">
     <div class="featured-collection-carousel" data-carousel>
       <div class="featured-collection-carousel__wrapper">
         {% if section.settings.home_featured_products == blank or collections[section.settings.home_featured_products].empty? or collections[section.settings.home_featured_products].products_count == 0 %}
@@ -70,10 +70,21 @@
 {% if section.settings.divider %}</div>{% endif %}
 
 <style>
+{% unless section.settings.show_price %}
+.grid-product__meta > div:nth-child(2) {
+    display: none;
+}
+.grid-product__price {
+    display: none;
+}
+{% endunless %}
+.grid-product{
+  margin-bottom: 0 !important;
+}
 .featured-collection-carousel {
   position: relative;
-  margin: 0 -10px;
-  padding: 0 40px;
+    margin: 0 -20px;
+    padding: 0 20px;
 }
 
 .featured-collection-carousel__wrapper {
@@ -84,15 +95,15 @@
 }
 
 .featured-collection-carousel__item {
-  flex: 0 0 calc(100% / {{ per_row }});
-  padding: 0 10px;
-  min-width: calc(100% / {{ per_row }});
+  flex: 0 0 calc(100% / {{ section.settings.display_per_row }});
+  padding: 0 ;
+  min-width: calc(100% / {{ section.settings.display_per_row }});
 }
 
 .featured-collection-carousel__prev,
 .featured-collection-carousel__next {
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.9);
   border: none;
@@ -108,11 +119,11 @@
 }
 
 .featured-collection-carousel__prev {
-  left: 0;
+  left: 22px;
 }
 
 .featured-collection-carousel__next {
-  right: 0;
+  right: 22px;
 }
 
 .featured-collection-carousel__prev .icon,
@@ -139,8 +150,8 @@ button.featured-collection-carousel__next {
 
 @media screen and (max-width: 769px) {
   .featured-collection-carousel__item {
-    flex: 0 0 100%;
-    min-width: 100%;
+        flex: 0 0 50%;
+        min-width: 50%;
   }
 }
 </style>
@@ -153,13 +164,126 @@ document.addEventListener('DOMContentLoaded', function() {
     const wrapper = carousel.querySelector('.featured-collection-carousel__wrapper');
     const prevBtn = carousel.querySelector('.featured-collection-carousel__prev');
     const nextBtn = carousel.querySelector('.featured-collection-carousel__next');
-    const itemWidth = wrapper.querySelector('.featured-collection-carousel__item').offsetWidth;
+    const items = wrapper.querySelectorAll('.featured-collection-carousel__item');
+    const itemWidth = items[0].offsetWidth;
+    
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
+    let hasMoved = false;
+    let startTime = 0;
+    let autoRotateInterval = null;
+    let isAutoRotating = false;
+
+    // Get auto-rotate settings
+    const autoRotate = {{ section.settings.auto_rotate | json }};
+    const rotateInterval = {{ section.settings.rotate_interval | json }} * 1000;
+
+    function startAutoRotate() {
+      if (autoRotate && !isAutoRotating) {
+        isAutoRotating = true;
+        autoRotateInterval = setInterval(() => {
+          if (!isDragging) {
+            wrapper.scrollBy({
+              left: itemWidth,
+              behavior: 'smooth'
+            });
+          }
+        }, rotateInterval);
+      }
+    }
+
+    function stopAutoRotate() {
+      if (autoRotateInterval) {
+        clearInterval(autoRotateInterval);
+        isAutoRotating = false;
+      }
+    }
+
+    // Touch events
+    wrapper.addEventListener('touchstart', dragStart);
+    wrapper.addEventListener('touchmove', drag);
+    wrapper.addEventListener('touchend', dragEnd);
+
+    // Mouse events
+    wrapper.addEventListener('mousedown', dragStart);
+    wrapper.addEventListener('mousemove', drag);
+    wrapper.addEventListener('mouseup', dragEnd);
+    wrapper.addEventListener('mouseleave', dragEnd);
+
+    // Prevent clicks on links when dragging
+    wrapper.addEventListener('click', function(e) {
+      if (isDragging || hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    function dragStart(event) {
+      startPos = getPositionX(event);
+      isDragging = true;
+      hasMoved = false;
+      startTime = Date.now();
+      animationID = requestAnimationFrame(animation);
+      wrapper.style.cursor = 'grabbing';
+      wrapper.style.scrollBehavior = 'auto';
+      stopAutoRotate();
+    }
+
+    function drag(event) {
+      if (!isDragging) return;
+      const currentPosition = getPositionX(event);
+      const diff = currentPosition - startPos;
+      wrapper.scrollLeft = prevTranslate - diff;
+      hasMoved = true;
+    }
+
+    function dragEnd(event) {
+      isDragging = false;
+      cancelAnimationFrame(animationID);
+      wrapper.style.cursor = 'grab';
+      wrapper.style.scrollBehavior = 'smooth';
+      
+      // Calculate the nearest snap position
+      const snapPosition = Math.round(wrapper.scrollLeft / itemWidth) * itemWidth;
+      wrapper.scrollLeft = snapPosition;
+      prevTranslate = snapPosition;
+
+      if (Date.now() - startTime < 200 && hasMoved) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      if (autoRotate) {
+        startAutoRotate();
+      }
+    }
+
+    function getPositionX(event) {
+      return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    function animation() {
+      if (isDragging) requestAnimationFrame(animation);
+    }
+
+    // Prevent default drag behaviors
+    wrapper.addEventListener('dragstart', (e) => e.preventDefault());
+    
+    // Add grab cursor
+    wrapper.style.cursor = 'grab';
     
     prevBtn.addEventListener('click', () => {
       wrapper.scrollBy({
         left: -itemWidth,
         behavior: 'smooth'
       });
+      stopAutoRotate();
+      if (autoRotate) {
+        startAutoRotate();
+      }
     });
     
     nextBtn.addEventListener('click', () => {
@@ -167,6 +291,23 @@ document.addEventListener('DOMContentLoaded', function() {
         left: itemWidth,
         behavior: 'smooth'
       });
+      stopAutoRotate();
+      if (autoRotate) {
+        startAutoRotate();
+      }
+    });
+
+    // Start auto-rotate if enabled
+    if (autoRotate) {
+      startAutoRotate();
+    }
+
+    // Pause auto-rotate when hovering over the carousel
+    wrapper.addEventListener('mouseenter', stopAutoRotate);
+    wrapper.addEventListener('mouseleave', () => {
+      if (autoRotate) {
+        startAutoRotate();
+      }
     });
   });
 });
@@ -191,17 +332,47 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         "type": "range",
         "id": "per_row",
-        "label": "Products per row",
+        "label": "Total of Products to display",
         "default": 4,
         "min": 1,
-        "max": 5,
+        "max": 20,
         "step": 1
+      },
+      {
+        "type": "range",
+        "id": "display_per_row",
+        "label": "Products Display per row",
+        "default": 4,
+        "min": 1,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "show_price",
+        "label": "Show product price",
+        "default": true
       },
       {
         "type": "checkbox",
         "id": "divider",
         "label": "Show section divider",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "auto_rotate",
+        "label": "Enable auto-rotate",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "rotate_interval",
+        "label": "Rotation interval (seconds)",
+        "default": 5,
+        "min": 2,
+        "max": 10,
+        "step": 1
       }
     ],
     "presets": [{
@@ -211,3 +382,40 @@ document.addEventListener('DOMContentLoaded', function() {
     "blocks" : []
   }
 {% endschema %}
+
+
+
+          <!-- Temporary Script -->
+
+<script>
+// Delay the execution of updateCarouselImages by 1 second
+// Array containing the new image URLs
+var imageUrls = [
+    'https://cdn.shopify.com/s/files/1/0464/0427/2291/files/dummy_1.png?v=1744331923',
+    'https://cdn.shopify.com/s/files/1/0464/0427/2291/files/dummy_2.png?v=1744331922',
+    'https://cdn.shopify.com/s/files/1/0464/0427/2291/files/dummy_3.png?v=1744331920',
+    // Add more URLs as needed
+];
+
+// Function to update the carousel images
+function updateCarouselImages() {
+    // Select all the images in the slider
+    const carouselImages = document.querySelectorAll('.featured-collection-carousel .featured-collection-carousel__item .grid-product__image');
+    
+    // Loop through the images and assign the new ones
+    carouselImages.forEach((img, index) => {
+        // Calculate the image index from the array, looping back when necessary
+        const newImageIndex = index % imageUrls.length;
+        img.src = imageUrls[newImageIndex];
+        img.srcset = imageUrls[newImageIndex];
+    }); // Correctly closed the forEach function here
+}
+
+// Call the function to apply the changes
+let callCount = 0; // Counter to track the number of calls
+const intervalId = setInterval(() => {
+        updateCarouselImages(); // Call the function
+        callCount++; 
+}, 300); // Interval set to 1 second
+</script>
+          

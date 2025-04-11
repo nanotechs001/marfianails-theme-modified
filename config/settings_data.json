@@ -1212,8 +1212,8 @@
         ],
         "settings": {
           "title": "Customer Testimonials",
-          "display_per_slide": 3,
-          "auto_rotate": true,
+          "display_per_slide": 4,
+          "auto_rotate": false,
           "rotate_interval": 5,
           "divider": false,
           "card_background": "#ffffff",

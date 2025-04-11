@@ -200,7 +200,7 @@ div#shopify-section-promo_grid_89YH7w .vertical-center .promo-grid__content {
     align-self: flex-end;
 }
 div#shopify-section-promo_grid_89YH7w .flex-grid__item:hover .promo-grid__bg {
-    scale: 1.08;
+    /* scale: 1.08; */
     transition: all .5s ease-in-out;
 }
 

@@ -303,6 +303,6 @@ div#CollectionAjaxResult .grid__item {
 div#CollectionAjaxResult .grid {
     margin: 0;
 }
-[data-section-id="1598526815360"] {
+#shopify-section-1598526815360 > div {
     display: block !important;
 }

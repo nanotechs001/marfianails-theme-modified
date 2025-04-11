@@ -707,7 +707,7 @@
       "1598506617521": {
         "type": "text-and-image",
         "settings": {
-          "image": "shopify://shop_images/BEAFD13C-D9D0-43DD-863F-1AAB16CA298E.jpg",
+          "image": "shopify://shop_images/banner_image.jpg",
           "image_width": 500,
           "subtitle": "",
           "title": "unleash your inner muse with marfia's #NAILGOALS",
@@ -1426,6 +1426,36 @@
           "full_width": false,
           "space_around": true
         }
+      },
+      "advanced_content_kkiUim": {
+        "type": "advanced-content",
+        "blocks": {
+          "image_BhAMyg": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/banner_image.jpg",
+              "link": "",
+              "width": "50%",
+              "alignment": "top-middle"
+            }
+          },
+          "html_YhKjH3": {
+            "type": "html",
+            "settings": {
+              "code": "<h2>unleash your inner muse with marfia's #NAILGOALS</h2><p>The perfect combination of timeless sophistication and modern playfulness. By fusing classic styles with fun, energetic colours, and subtly playful prints, our kits offer endless possibilities for creating a unique look that can be applied in minutes.</p>",
+              "width": "50%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "image_BhAMyg",
+          "html_YhKjH3"
+        ],
+        "settings": {
+          "full_width": true,
+          "space_around": false
+        }
       }
     },
     "content_for_index": [
@@ -1442,7 +1472,8 @@
       "1598506617521",
       "1598610102634",
       "1598610217059",
-      "1598527584790"
+      "1598527584790",
+      "advanced_content_kkiUim"
     ],
     "blocks": {
       "15683396631634586217": {

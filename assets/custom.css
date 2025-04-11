@@ -300,3 +300,6 @@ div#CollectionAjaxResult .grid__item {
 #CollectionSection div.grid-product__meta > div:nth-child(2) {
     display: none;
 }
+div#CollectionAjaxResult .grid {
+    margin: 0;
+}

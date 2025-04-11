@@ -294,3 +294,6 @@ div#shopify-section-advanced_content_kkiUim {
 div#CollectionAjaxResult {
     background: #FFECEC;
 }
+div#CollectionAjaxResult .grid__item {
+    padding-left: 3px;
+}

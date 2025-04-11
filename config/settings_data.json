@@ -1167,6 +1167,61 @@
           "full_width": true,
           "space_around": false
         }
+      },
+      "testimonials_carousel_AnAwPd": {
+        "type": "testimonials-carousel",
+        "blocks": {
+          "testimonial_8PVerx": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+              "author": "Customer name",
+              "rating": 5
+            }
+          },
+          "testimonial_qHBmBF": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+              "author": "Customer name",
+              "rating": 5
+            }
+          },
+          "testimonial_JqyPgh": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+              "author": "Customer name",
+              "rating": 5
+            }
+          },
+          "testimonial_MtrCbk": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
+              "author": "Customer name",
+              "rating": 5
+            }
+          }
+        },
+        "block_order": [
+          "testimonial_8PVerx",
+          "testimonial_qHBmBF",
+          "testimonial_JqyPgh",
+          "testimonial_MtrCbk"
+        ],
+        "settings": {
+          "title": "Customer Testimonials",
+          "display_per_slide": 3,
+          "auto_rotate": true,
+          "rotate_interval": 5,
+          "divider": false,
+          "card_background": "#ffffff",
+          "text_color": "#000000",
+          "author_color": "#000000",
+          "quote_color": "#000000",
+          "rating_color": "#ffd700"
+        }
       }
     },
     "content_for_index": [
@@ -1177,7 +1232,8 @@
       "advanced_content_YEwX8M",
       "promo_grid_4p7Wbq",
       "1598506673114",
-      "advanced_content_kkiUim"
+      "advanced_content_kkiUim",
+      "testimonials_carousel_AnAwPd"
     ],
     "blocks": {
       "15683396631634586217": {

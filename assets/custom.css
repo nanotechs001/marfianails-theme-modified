@@ -271,4 +271,6 @@ div#shopify-section-1598506520048 .feature-row__text--left {
 /* Temporaries */
 div#shopify-section-1598506673114 {
     padding-bottom: 2% !important;
+    padding-top: 0 !important;
+    background: #fff;
 }

@@ -704,20 +704,6 @@
           "recent_count": 5
         }
       },
-      "1598506617521": {
-        "type": "text-and-image",
-        "settings": {
-          "image": "shopify://shop_images/banner_image.jpg",
-          "image_width": 500,
-          "subtitle": "",
-          "title": "unleash your inner muse with marfia's #NAILGOALS",
-          "text": "<p>The perfect combination of timeless sophistication and modern playfulness. By fusing classic styles with fun, energetic colours, and subtly playful prints, our kits offer endless possibilities for creating a unique look that can be applied in minutes.</p>",
-          "button_label": "",
-          "button_link": "",
-          "layout": "right",
-          "divider": false
-        }
-      },
       "1598506673114": {
         "type": "testimonials",
         "blocks": {
@@ -1460,7 +1446,6 @@
       "promo_grid_4p7Wbq",
       "1598506673114",
       "advanced_content_Yxamnx",
-      "1598506617521",
       "1598610102634",
       "1598610217059",
       "advanced_content_kkiUim"

@@ -190,14 +190,19 @@
     </style>
     
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    function initTestimonialsCarousel() {
       const carousels = document.querySelectorAll('[data-carousel]');
+      
+      if (!carousels.length) return;
       
       carousels.forEach(carousel => {
         const wrapper = carousel.querySelector('.testimonials-carousel__wrapper');
         const prevBtn = carousel.querySelector('.testimonials-carousel__prev');
         const nextBtn = carousel.querySelector('.testimonials-carousel__next');
         const items = wrapper.querySelectorAll('.testimonials-carousel__item');
+        
+        if (!wrapper || !prevBtn || !nextBtn || !items.length) return;
+        
         const itemWidth = items[0].offsetWidth;
         const itemsPerSlide = {{ section.settings.display_per_slide }};
         let currentIndex = 0;
@@ -342,7 +347,19 @@
           }
         });
       });
-    });
+    }
+    
+    // Initialize when DOM is loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTestimonialsCarousel);
+    } else {
+      initTestimonialsCarousel();
+    }
+    
+    // Re-initialize on section load for Shopify theme editor
+    if (window.Shopify && window.Shopify.designMode) {
+      document.addEventListener('shopify:section:load', initTestimonialsCarousel);
+    }
     </script>
     
     {% schema %}

@@ -297,3 +297,6 @@ div#CollectionAjaxResult {
 div#CollectionAjaxResult .grid__item {
     padding-left: 3px;
 }
+#CollectionSection div.grid-product__meta > div:nth-child(2) {
+    display: none;
+}

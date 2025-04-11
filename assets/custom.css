@@ -328,3 +328,6 @@ div#shopify-section-1598506673114 .slick-initialized .slick-slide {
     max-width: 382px;
 }
 }
+div#shopify-section-1598506673114 .page-width.text-center {
+    max-width: 100% !important;
+}

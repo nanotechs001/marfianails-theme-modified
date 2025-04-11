@@ -1021,39 +1021,6 @@
           "autoplay_speed": 5
         }
       },
-      "1615439274870af61c": {
-        "type": "mbslideshow",
-        "blocks": {
-          "1615439274870af61c-0": {
-            "type": "image",
-            "settings": {
-              "top_subheading": "",
-              "title": "",
-              "title_size": 80,
-              "subheading": "",
-              "link": "shopify://collections/everyday-press-on-nails-1",
-              "link_text": "",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/celebrate_women_everywhere_Instagram_Post_Square_1.png",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1615439274870af61c-0"
-        ],
-        "settings": {
-          "section_height": "natural",
-          "mobile_height": "500px",
-          "parallax": false,
-          "style": "minimal",
-          "autoplay": false,
-          "autoplay_speed": 5
-        }
-      },
       "featured_collections_TcdTPr": {
         "type": "featured-collections",
         "blocks": {
@@ -1309,7 +1276,6 @@
     "content_for_index": [
       "1598526815360",
       "1598506747424",
-      "1615439274870af61c",
       "promo_grid_89YH7w",
       "featured_collections_TcdTPr",
       "advanced_content_YEwX8M",

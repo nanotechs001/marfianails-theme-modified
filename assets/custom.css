@@ -320,7 +320,7 @@ div#CollectionAjaxResult .grid {
 }
 @media only screen and (min-width: 769px) {
 
-.slick-initialized .slick-slide {
+div#shopify-section-1598506673114 .slick-initialized .slick-slide {
     display: block;
     max-width: 352px;
 }

@@ -58,11 +58,12 @@ div#shopify-section-1598506747424 {
   .rte-setting.text-spacing {
     min-height: 110px;
 }
+
+}
  .testimonials-slider.slick-initialized .slick-track {
     scale: 0.8;
     margin-left: -9%;
     margin-top: -7%;
-}
 }
 @media only screen and (max-width: 768px) {
 

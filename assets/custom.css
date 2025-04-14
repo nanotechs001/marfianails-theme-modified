@@ -59,6 +59,11 @@ div#shopify-section-1598506747424 {
     min-height: 110px;
 }
 
+ .testimonials-slider.slick-initialized .slick-track {
+    scale: 0.8;
+    margin-left: -9%;
+    margin-top: -7%;
+}
 }
  .testimonials-slider.slick-initialized .slick-track {
     scale: 0.8;

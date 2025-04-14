@@ -52,6 +52,9 @@ div#shopify-section-1598506747424 {
   div#shopify-section-1598506673114 .page-width.text-center {
     padding: 0px 2px;
 }
+  .slick-list.draggable {
+    margin-bottom: -5%;
+}
   .rte-setting.text-spacing {
     min-height: 110px;
 }

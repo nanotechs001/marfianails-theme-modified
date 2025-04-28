@@ -876,7 +876,8 @@
           "87937a83-0a71-4a93-b3f8-5e9f2a911621"
         ],
         "custom_css": [
-          ".hero[data-bars] .slick-dots {bottom: 20px;}"
+          ".hero[data-bars] .slick-dots {bottom: 20px;}",
+          ".animation-contents {font-family: 'Poppins';}"
         ],
         "settings": {
           "section_height": "100vh",

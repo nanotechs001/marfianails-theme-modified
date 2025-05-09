@@ -1,9 +1,9 @@
-/* Global CSS */
+/* Global CSS Update May 9 2025 */
 .shopify-section h2 {
     font-size: 40px;
 }
 div.hero__subtitle > div > div {
-    max-width: 900px;
+    max-width: 910px;
 }
 .image-wrap img:not([role=presentation]), .image-wrap svg, .image-wrap .animate-me {
     opacity: 1 !important;

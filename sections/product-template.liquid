@@ -1,12 +1,3 @@
-
-{% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
-  <hr id="Reviews-{{ product.id }}" class="hr--clear">
-  <div class="index-section product-reviews product-reviews--full">
-    <div class="page-width">
-      <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
-    </div>
-  </div>
-{% endif %}
 {% include 'product-template',
   description_style: section.settings.description_style,
   image_position: section.settings.image_position,
@@ -17,6 +8,14 @@
   thumbnail_arrows: section.settings.thumbnail_arrows
 %}
 
+{% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
+  <hr id="Reviews-{{ product.id }}" class="hr--clear">
+  <div class="index-section product-reviews product-reviews--full">
+    <div class="page-width">
+      <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+    </div>
+  </div>
+{% endif %}
 {% schema %}
   {
     "name": "Product pages",

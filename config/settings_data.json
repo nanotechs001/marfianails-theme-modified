@@ -258,7 +258,7 @@
           "image_size": "medium",
           "thumbnail_position": "below",
           "thumbnail_arrows": true,
-          "description_style": "full",
+          "description_style": "default",
           "social_enable": true
         }
       },

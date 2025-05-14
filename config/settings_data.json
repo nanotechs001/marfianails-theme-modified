@@ -252,7 +252,9 @@
       },
       "product-template": {
         "type": "product-template",
-        "custom_css": [],
+        "custom_css": [
+          ".gravity-button {background-color: #1f1f1f !important;}"
+        ],
         "settings": {
           "image_position": "left",
           "image_size": "medium",

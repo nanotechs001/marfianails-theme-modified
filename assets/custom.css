@@ -22,7 +22,7 @@ blockquote.testimonials-slider__text img {
 .testimonials-slider {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0 !important;
 }
 ul.slick-dots {
     display: none !important;

@@ -14,7 +14,7 @@
     padding: 6%;
 }
   .product-single__meta {
-    padding-left: 0;
+    padding-left: 0 !important;
 }
 .grid__item.medium-up--one-half {
     position: sticky;

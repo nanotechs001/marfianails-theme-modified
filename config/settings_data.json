@@ -256,8 +256,8 @@
           "image_position": "left",
           "image_size": "medium",
           "thumbnail_position": "below",
-          "thumbnail_arrows": false,
-          "description_style": "default",
+          "thumbnail_arrows": true,
+          "description_style": "full",
           "social_enable": true
         }
       },
@@ -877,7 +877,7 @@
         ],
         "custom_css": [
           ".hero[data-bars] .slick-dots {bottom: 20px;}",
-          ".animation-contents {font-family: 'Poppins';}"
+          ".animation-contents {font-family: \"Poppins\";}"
         ],
         "settings": {
           "section_height": "100vh",

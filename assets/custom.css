@@ -10,7 +10,7 @@
 .grid__item.medium-up--one-half {
     padding: 50px 0;
 }
-  .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(1) {
+  .page-content.page-content--product .grid__item.medium-up--one-half{
     padding: 6%;
 }
 .grid__item.medium-up--one-half {

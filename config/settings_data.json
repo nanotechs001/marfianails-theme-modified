@@ -252,6 +252,10 @@
       },
       "product-template": {
         "type": "product-template",
+        "custom_css": [
+          ".payment-buttons {display: flex; flex-direction: row; column-gap: 15px;}",
+          ".shopify-payment-button {margin-top: 0;}"
+        ],
         "settings": {
           "image_position": "left",
           "image_size": "medium",

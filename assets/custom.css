@@ -9,7 +9,10 @@
 .page-content.page-content--product {
     padding-top: 0;
 }
-  
+.page-content.page-content--product{
+    padding-bottom: 0;
+
+}
 }
 
 /* Global CSS Update May 9 2025 */

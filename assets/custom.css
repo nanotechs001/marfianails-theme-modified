@@ -13,6 +13,9 @@
   .page-content.page-content--product .grid__item.medium-up--one-half{
     padding: 6%;
 }
+  .product-single__meta {
+    padding-left: 0;
+}
 .grid__item.medium-up--one-half {
     position: sticky;
     top: 69px;

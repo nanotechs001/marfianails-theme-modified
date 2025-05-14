@@ -6,6 +6,10 @@
     position: sticky;
     top: 100px;
 }
+.page-content.page-content--product {
+    padding-top: 0;
+}
+  
 }
 
 /* Global CSS Update May 9 2025 */

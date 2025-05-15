@@ -11,7 +11,7 @@
 }
 .js-qty__adjust--minus,.js-qty__adjust--plus {
     border-right: unset;
-    background: #111;
+    background: #111 !important;
 }
 .js-qty__adjust .icon ,.js-qty__adjust .icon{
     fill: #ffffff !important;

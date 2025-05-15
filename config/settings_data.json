@@ -257,7 +257,7 @@
           "image_position": "left",
           "image_size": "medium",
           "thumbnail_position": "below",
-          "thumbnail_arrows": true,
+          "thumbnail_arrows": false,
           "description_style": "default",
           "social_enable": true
         }

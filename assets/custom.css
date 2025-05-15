@@ -12,6 +12,10 @@ div#shopify-section-product-recommendations .index-section {
 .text-center.page-content.page-content--bottom {
     background: #fff1f1;
 }
+.yotpo.yotpo-main-widget {
+    padding-top: 40px;
+    width: 100% !important;
+}
 .return-link {
     margin-top: 10px !important;
 }

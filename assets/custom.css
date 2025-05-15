@@ -111,6 +111,9 @@ body .yotpo.yotpo-main-widget {
     display: flex;
     justify-content: center;
 }
+  .product__policies.rte {
+    text-align: center !important;
+}
 }
 /* Global CSS Update May 9 2025 */
 .shopify-section h2 {

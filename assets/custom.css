@@ -120,6 +120,7 @@ body .yotpo.yotpo-main-widget {
 }
   .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(2){
     padding-right: 17px !important;
+      padding-bot: 20px !important;
   }
 }
 /* Global CSS Update May 9 2025 */

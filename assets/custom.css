@@ -13,7 +13,7 @@ div#shopify-section-product-recommendations .index-section {
     background: #fff1f1;
 }
 .return-link {
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 div.yotpo.bottomLine .pull-left {
     display: flex !important;

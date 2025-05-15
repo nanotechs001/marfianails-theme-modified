@@ -32,6 +32,9 @@ nav.breadcrumb ,hr.hr--medium{
 .js-qty__adjust .icon ,.js-qty__adjust .icon{
     fill: #ffffff !important;
 }
+.shopify-payment-button {
+    filter: grayscale(1) contrast(2);
+}
 @media only screen and (min-width: 769px) {
 .grid__item.medium-up--one-half {
     padding: 50px 0;

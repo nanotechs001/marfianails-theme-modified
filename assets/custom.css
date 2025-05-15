@@ -106,7 +106,12 @@ body .yotpo.yotpo-main-widget {
     padding: 0;
 }
 }
-
+@media only screen and (max: 768px) {
+.standalone-bottomline {
+    display: flex;
+    justify-content: center;
+}
+}
 /* Global CSS Update May 9 2025 */
 .shopify-section h2 {
     font-size: 40px;

@@ -1,6 +1,14 @@
 {% section 'product-template' %}
 
-{% section 'product-slider' %}
+<div class="text-slider-section">
+  <div class="page-width">
+    <div class="text-slider">
+      <div class="text-slide">Free shipping on orders over $65 *Australia Wide Only*</div>
+      <div class="text-slide">30% SITEWIDE CODE BEAUTY30 APPLIED AT CHECKOUT</div>
+      <div class="text-slide">Nail now pay later with AFTERPAY, LATITUDE PAY & KLARNA</div>
+    </div>
+  </div>
+</div>
 
 {% section 'product-recommendations' %}
 
@@ -21,8 +29,19 @@
     soldOut: {{ 'products.product.sold_out' | t | json }},
     unavailable: {{ 'products.product.unavailable' | t | json }}
   };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    $('.text-slider').slick({
+      arrows: false,
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
 </script>
-<div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
 
 <style>
 .product-divider {
@@ -60,17 +79,5 @@
 }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  $('.text-slider').slick({
-    arrows: false,
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    fade: true,
-    cssEase: 'linear'
-  });
-});
-</script>
+<div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
 

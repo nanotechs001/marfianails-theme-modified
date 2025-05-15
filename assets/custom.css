@@ -24,7 +24,7 @@ div.yotpo.bottomLine .pull-left {
     background: #111 !important;
 }
 nav.breadcrumb ,hr.hr--medium{
-    display: none;
+    display: none !important;
 }
 .js-qty__adjust .icon ,.js-qty__adjust .icon{
     fill: #ffffff !important;

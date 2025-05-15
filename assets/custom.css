@@ -16,6 +16,11 @@ div.yotpo.bottomLine .pull-left {
 .product__quantity label {
     font-weight: 600;
 }
+a#more-payment-options-link {
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
 .collapsible-trigger-btn--borders {
     font-weight: 600;
 }

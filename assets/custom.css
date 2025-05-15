@@ -15,7 +15,7 @@
     padding: 6%;
 }
   .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(1) {
-    padding-top: 0%;
+    padding-top: 0% !important;
 }
   .product-single__meta {
     padding-left: 0 !important;

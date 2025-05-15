@@ -1,0 +1,297 @@
+{% assign toolbar_menu = linklists[section.settings.toolbar_menu] %}
+
+<div class="page-width">
+  <div class="product-menu-wrapper">
+    {% if toolbar_menu.links.size > 0 %}
+      <nav class="product-toolbar-menu" role="navigation">
+        <ul class="site-nav">
+          {% for link in toolbar_menu.links %}
+            <li class="site-nav__item">
+              <a href="{{ link.url }}" class="site-nav__link">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+  </div>
+</div>
+
+{%- assign show_announcement = false -%}
+{%- assign announcement_block_count = 0 -%}
+{% for block in section.blocks %}
+  {% if block.type == 'announcement' %}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {% endif %}
+{% endfor %}
+
+{% if show_announcement %}
+  <div class="announcement-bar product-divider">
+    <div class="page-width">
+      <div
+        id="ProductAnnouncementSlider"
+        class="announcement-slider{% if section.settings.announcement_compact %} announcement-slider--compact{% endif %}"
+        data-compact-style="{{ section.settings.announcement_compact }}"
+        data-block-count="{{ announcement_block_count }}">
+        {%- assign slide_index = 0 -%}
+        {% for block in section.blocks %}
+          {% if block.type == 'announcement' %}
+            <div
+              id="ProductAnnouncementSlide-{{ block.id }}"
+              class="announcement-slider__slide"
+              data-index="{{ slide_index }}"
+              {{ block.shopify_attributes }}>
+              {% if block.settings.link != blank %}
+                <a class="announcement-link" href="{{ block.settings.link }}">
+              {% endif %}
+                {% if block.settings.text != blank %}
+                  <span class="announcement-text">{{ block.settings.text }}</span>
+                {% endif %}
+                {% if block.settings.link_text != blank %}
+                  <span class="announcement-link-text">{{ block.settings.link_text }}</span>
+                {% endif %}
+              {% if block.settings.link != blank %}
+                </a>
+              {% endif %}
+            </div>
+            {%- assign slide_index = slide_index | plus: 1 -%}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Menu",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "toolbar_menu",
+      "label": "Toolbar menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Heading",
+          "default": "Free shipping"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Text",
+          "default": "On all orders over $100"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+.product-menu-wrapper {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid #e8e8e1;
+  border-bottom: 1px solid #e8e8e1;
+}
+
+.product-toolbar-menu {
+  margin: 0;
+}
+
+.site-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.site-nav__item {
+  display: inline-block;
+}
+
+.site-nav__link {
+  display: block;
+  text-decoration: none;
+  padding: 5px 10px;
+  color: var(--colorTextBody);
+  transition: color 0.2s ease-in-out;
+}
+
+.site-nav__link:hover {
+  color: var(--colorPrimary);
+}
+
+.product-divider {
+  margin: 30px 0;
+}
+
+.product-divider .announcement-slider {
+  margin-bottom: 0;
+}
+
+.product-divider .announcement-bar {
+  border-top: 1px solid {{ settings.color_borders }};
+  border-bottom: 1px solid {{ settings.color_borders }};
+}
+
+.announcement-slider__slide {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  padding: 0 5px;
+}
+
+.announcement-slider__slide:first-child {
+  display: block;
+}
+
+.announcement-link {
+  display: block;
+  color: var(--colorAnnouncementText);
+}
+
+.announcement-link:hover,
+.announcement-link:active {
+  color: var(--colorAnnouncementText);
+}
+
+.announcement-text {
+  font-weight: bold;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85em;
+}
+
+.announcement-link-text {
+  display: block;
+}
+
+.announcement-link-text a {
+  color: inherit;
+}
+
+@media screen and (min-width: 769px) {
+  .announcement-slider--compact .announcement-text,
+  .announcement-slider--compact .announcement-link-text {
+    display: inline;
+  }
+
+  .announcement-slider--compact .announcement-text + .announcement-link-text {
+    padding-left: 5px;
+  }
+}
+</style>
+
+<script>
+theme.productAnnouncements = (function() {
+  var slideCount = 0;
+  var compact = false;
+  var defaults = {
+    accessibility: true,
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    touchThreshold: 20,
+    slidesToShow: 1
+  };
+  var $slider;
+
+  function init() {
+    $slider = $('#ProductAnnouncementSlider');
+    if (!$slider.length) {
+      return;
+    }
+
+    slideCount = $slider.data('block-count');
+    compact = $slider.data('compact-style');
+
+    var desktopOptions = $.extend({}, defaults, {
+      slidesToShow: compact ? 1 : slideCount,
+      slidesToScroll: 1
+    });
+
+    var mobileOptions = $.extend({}, defaults, {
+      slidesToShow: 1
+    });
+
+    if (theme.config.bpSmall) {
+      initSlider($slider, mobileOptions);
+    } else {
+      initSlider($slider, desktopOptions);
+    }
+
+    $('body').on('matchSmall', function() {
+      initSlider($slider, mobileOptions);
+    });
+
+    $('body').on('matchLarge', function() {
+      initSlider($slider, desktopOptions);
+    });
+  }
+
+  function initSlider($slider, args) {
+    if (isInitialized($slider)) {
+      $slider.slick('unslick');
+    }
+    $slider.slick(args);
+  }
+
+  function isInitialized($slider) {
+    return $slider.length && $slider.hasClass('slick-initialized');
+  }
+
+  function onBlockSelect(id) {
+    var $slide = $('#ProductAnnouncementSlide-' + id);
+    if ($slider.length) {
+      $slider.slick('slickPause');
+    }
+    if ($slide.length) {
+      $slider.slick('slickGoTo', $slide.data('index'));
+    }
+  }
+
+  function onBlockDeselect(id) {
+    if ($slider.length && isInitialized($slider)) {
+      $slider.slick('slickPlay');
+    }
+  }
+
+  function unload() {
+    if (isInitialized($slider)) {
+      $slider.slick('unslick');
+    }
+  }
+
+  return {
+    init: init,
+    onBlockSelect: onBlockSelect,
+    onBlockDeselect: onBlockDeselect,
+    unload: unload
+  };
+})();
+
+document.addEventListener('shopify:section:load', function() {
+  theme.productAnnouncements.init();
+});
+</script> 

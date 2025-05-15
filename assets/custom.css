@@ -62,6 +62,9 @@ nav.breadcrumb ,hr.hr--medium{
 .shopify-payment-button {
     filter: grayscale(1) contrast(2);
 }
+.product-recommendations-placeholder .grid-product__price {
+    display: none;
+}
 @media only screen and (min-width: 769px) {
 .grid__item.medium-up--one-half {
     padding: 50px 0;

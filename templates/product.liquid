@@ -1,9 +1,7 @@
 {% section 'product-template' %}
 
-<div class="product-divider">
-  {% include 'announcement-bar' %}
-</div>
- 
+{% section 'product-slider' %}
+
 {% section 'product-recommendations' %}
 
 {% if collection %}
@@ -25,4 +23,54 @@
   };
 </script>
 <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
+
+<style>
+.product-divider {
+  margin: 30px 0;
+}
+
+.product-divider .announcement-bar {
+  border-top: 1px solid {{ settings.color_border }};
+  border-bottom: 1px solid {{ settings.color_border }};
+}
+
+.text-slider-section {
+  padding: 15px 0;
+  margin: 30px 0;
+  border-top: 1px solid {{ settings.color_border }};
+  border-bottom: 1px solid {{ settings.color_border }};
+  background: {{ settings.color_announcement }};
+  color: {{ settings.color_announcement_text }};
+}
+
+.text-slider {
+  text-align: center;
+}
+
+.text-slide {
+  display: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85em;
+}
+
+.text-slide:first-child {
+  display: block;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  $('.text-slider').slick({
+    arrows: false,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    fade: true,
+    cssEase: 'linear'
+  });
+});
+</script>
 

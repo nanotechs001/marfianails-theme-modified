@@ -1,7 +1,5 @@
 {% section 'product-sections-template' %}
 {% section 'product-recommendations' %}
-{% section 'recently-viewed' %}
-
 {% if collection %}
   <div class="text-center page-content page-content--bottom">
     <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn return-link">

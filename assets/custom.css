@@ -12,6 +12,9 @@ div#shopify-section-product-recommendations .index-section {
 .text-center.page-content.page-content--bottom {
     background: #fff1f1;
 }
+.product-recommendations .grid-product__price {
+    display: none !important;
+}
 .yotpo.yotpo-main-widget {
     padding-top: 40px;
     width: 100% !important;

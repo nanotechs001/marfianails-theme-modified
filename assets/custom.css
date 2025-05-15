@@ -114,6 +114,9 @@ body .yotpo.yotpo-main-widget {
   .product__policies.rte {
     text-align: center !important;
 }
+  .page-content.page-content--product .grid {
+    margin-left: 0 !important;
+}
 }
 /* Global CSS Update May 9 2025 */
 .shopify-section h2 {

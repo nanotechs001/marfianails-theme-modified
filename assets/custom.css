@@ -6,6 +6,13 @@
 .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(2) {
     background: #fff1f1;
 }
+div.yotpo.bottomLine .pull-left {
+    display: flex !important;
+    flex-direction: row;
+    column-gap: 8px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
 .product-single__meta img {
     mix-blend-mode: multiply;
 }

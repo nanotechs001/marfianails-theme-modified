@@ -1,8 +1,9 @@
 {% section 'product-template' %}
-{%- assign main_menu = linklists[section.settings.main_menu_link_list] -%}
-{%- assign toolbar_menu = linklists[section.settings.toolbar_menu] -%}
 
+ {% include 'announcement-bar' %}
+ 
 {% section 'product-recommendations' %}
+{% section 'recently-viewed' %}
 
 {% if collection %}
   <div class="text-center page-content page-content--bottom">

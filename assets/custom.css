@@ -16,6 +16,12 @@ div#shopify-section-product-recommendations .index-section {
     padding-top: 40px;
     width: 100% !important;
 }
+.main-widget.yotpo-display-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
 .return-link {
     margin-top: 10px !important;
 }

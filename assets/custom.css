@@ -9,6 +9,9 @@
 div#shopify-section-product-recommendations .index-section {
     padding-bottom: 0;
 }
+.text-center.page-content.page-content--bottom {
+    background: #fff1f1;
+}
 div.yotpo.bottomLine .pull-left {
     display: flex !important;
     flex-direction: row;

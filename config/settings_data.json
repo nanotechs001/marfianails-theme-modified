@@ -515,8 +515,8 @@
       "collection-header": {
         "type": "collection-header",
         "settings": {
-          "enable": false,
-          "collection_image_enable": false,
+          "enable": true,
+          "collection_image_enable": true,
           "parallax": false
         }
       },
@@ -696,7 +696,7 @@
       "product-recommendations": {
         "type": "product-recommendations",
         "custom_css": [
-          ".grid-product__price{display:none !important;}"
+          ".grid-product__price {display: none !important;}"
         ],
         "settings": {
           "show_product_recommendations": true,

@@ -13,6 +13,9 @@
     border-right: unset;
     background: #111 !important;
 }
+nav.breadcrumb {
+    display: none;
+}
 .js-qty__adjust .icon ,.js-qty__adjust .icon{
     fill: #ffffff !important;
 }

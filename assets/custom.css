@@ -65,6 +65,9 @@ nav.breadcrumb ,hr.hr--medium{
 .product-recommendations-placeholder .grid-product__price {
     display: none;
 }
+body .yotpo.yotpo-main-widget {
+    background-color: #efefef !important;
+}
 @media only screen and (min-width: 769px) {
 .grid__item.medium-up--one-half {
     padding: 50px 0;

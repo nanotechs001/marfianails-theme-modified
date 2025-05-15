@@ -26,6 +26,9 @@ div.yotpo.bottomLine .pull-left {
 nav.breadcrumb ,hr.hr--medium{
     display: none !important;
 }
+.product-single__description.rte {
+    font-size: 14px;
+}
 .js-qty__adjust .icon ,.js-qty__adjust .icon{
     fill: #ffffff !important;
 }

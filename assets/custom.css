@@ -27,7 +27,7 @@ nav.breadcrumb ,hr.hr--medium{
     display: none !important;
 }
 .product-single__description.rte {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 .js-qty__adjust .icon ,.js-qty__adjust .icon{
     fill: #ffffff !important;

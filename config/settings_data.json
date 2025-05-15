@@ -252,7 +252,9 @@
       },
       "product-template": {
         "type": "product-template",
-        "custom_css": [],
+        "custom_css": [
+          ".text-slide.slick-slide.slick-current.slick-active {cursor: auto;}"
+        ],
         "settings": {
           "image_position": "left",
           "image_size": "medium",

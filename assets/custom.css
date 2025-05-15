@@ -65,6 +65,12 @@ nav.breadcrumb ,hr.hr--medium{
 .product-recommendations-placeholder .grid-product__price {
     display: none;
 }
+.yotpo-review.yotpo-regular-box {
+    background: #fff;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 25px;
+}
 body .yotpo.yotpo-main-widget {
     background-color: #efefef !important;
 }

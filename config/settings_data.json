@@ -253,7 +253,8 @@
       "product-template": {
         "type": "product-template",
         "custom_css": [
-          ".text-slide.slick-slide.slick-current.slick-active {cursor: auto;}"
+          ".text-slide.slick-slide.slick-current.slick-active {cursor: auto;}",
+          ".grid-product__price {display: none;}"
         ],
         "settings": {
           "image_position": "left",

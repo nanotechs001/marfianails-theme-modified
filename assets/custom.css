@@ -23,7 +23,7 @@ div.yotpo.bottomLine .pull-left {
     border-right: unset;
     background: #111 !important;
 }
-nav.breadcrumb {
+nav.breadcrumb ,hr.hr--medium{
     display: none;
 }
 .js-qty__adjust .icon ,.js-qty__adjust .icon{

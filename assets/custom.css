@@ -108,6 +108,11 @@ body .yotpo.yotpo-main-widget {
     max-width: unset;
     padding: 0;
 }
+  /* Collections Pages */
+  div#CollectionAjaxResult .grid__item {
+    padding-left: 20px;
+    padding-right: 10px;
+}
 }
 
 @media only screen and (max-width: 768px) {

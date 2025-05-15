@@ -18,6 +18,7 @@
   </div>
 </div>
 
+{%- assign section = sections.header -%}
 {%- assign show_announcement = false -%}
 {%- assign announcement_block_count = 0 -%}
 {% for block in section.blocks %}
@@ -149,8 +150,8 @@
 }
 
 .product-divider .announcement-bar {
-  border-top: 1px solid {{ settings.color_borders }};
-  border-bottom: 1px solid {{ settings.color_borders }};
+  border-top: 1px solid {{ settings.color_border }};
+  border-bottom: 1px solid {{ settings.color_border }};
 }
 
 .announcement-slider__slide {
@@ -203,95 +204,30 @@
 </style>
 
 <script>
-theme.productAnnouncements = (function() {
-  var slideCount = 0;
-  var compact = false;
-  var defaults = {
-    accessibility: true,
-    arrows: false,
-    dots: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    touchThreshold: 20,
-    slidesToShow: 1
-  };
-  var $slider;
-
-  function init() {
-    $slider = $('#ProductAnnouncementSlider');
-    if (!$slider.length) {
-      return;
-    }
-
-    slideCount = $slider.data('block-count');
-    compact = $slider.data('compact-style');
-
-    var desktopOptions = $.extend({}, defaults, {
-      slidesToShow: compact ? 1 : slideCount,
-      slidesToScroll: 1
-    });
-
-    var mobileOptions = $.extend({}, defaults, {
-      slidesToShow: 1
-    });
-
-    if (theme.config.bpSmall) {
-      initSlider($slider, mobileOptions);
-    } else {
-      initSlider($slider, desktopOptions);
-    }
-
-    $('body').on('matchSmall', function() {
-      initSlider($slider, mobileOptions);
-    });
-
-    $('body').on('matchLarge', function() {
-      initSlider($slider, desktopOptions);
-    });
-  }
-
-  function initSlider($slider, args) {
-    if (isInitialized($slider)) {
-      $slider.slick('unslick');
-    }
-    $slider.slick(args);
-  }
-
-  function isInitialized($slider) {
-    return $slider.length && $slider.hasClass('slick-initialized');
-  }
-
-  function onBlockSelect(id) {
-    var $slide = $('#ProductAnnouncementSlide-' + id);
+document.addEventListener('DOMContentLoaded', function() {
+  if (theme.announcementBar) {
+    var $slider = $('#ProductAnnouncementSlider');
     if ($slider.length) {
-      $slider.slick('slickPause');
-    }
-    if ($slide.length) {
-      $slider.slick('slickGoTo', $slide.data('index'));
+      var slideCount = $slider.data('block-count');
+      var compact = $slider.data('compact-style');
+      
+      var options = {
+        accessibility: true,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        touchThreshold: 20,
+        slidesToShow: compact ? 1 : slideCount,
+        slidesToScroll: 1
+      };
+
+      if (window.innerWidth < 769) {
+        options.slidesToShow = 1;
+      }
+
+      $slider.slick(options);
     }
   }
-
-  function onBlockDeselect(id) {
-    if ($slider.length && isInitialized($slider)) {
-      $slider.slick('slickPlay');
-    }
-  }
-
-  function unload() {
-    if (isInitialized($slider)) {
-      $slider.slick('unslick');
-    }
-  }
-
-  return {
-    init: init,
-    onBlockSelect: onBlockSelect,
-    onBlockDeselect: onBlockDeselect,
-    unload: unload
-  };
-})();
-
-document.addEventListener('shopify:section:load', function() {
-  theme.productAnnouncements.init();
 });
 </script> 

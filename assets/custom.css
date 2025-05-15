@@ -70,9 +70,9 @@ nav.breadcrumb ,hr.hr--medium{
 }
 .yotpo-review.yotpo-regular-box {
     background: #fff;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding: 25px;
+    margin-bottom: 15px !important;
+    margin-top: 15px !important;
+    padding: 25px !important;
 }
 body .yotpo.yotpo-main-widget {
     background-color: #efefef !important;

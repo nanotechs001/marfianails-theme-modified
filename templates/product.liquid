@@ -22,8 +22,6 @@
 
 <script>
   // Override default values of shop.strings for each template.
-  // Alternate product templates can change values of
-  // add to cart button, sold out, and unavailable states here.
   theme.productStrings = {
     addToCart: {{ 'products.product.add_to_cart' | t | json }},
     soldOut: {{ 'products.product.sold_out' | t | json }},
@@ -67,17 +65,24 @@
 }
 
 .text-slide {
-  display: none;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.85em;
 }
 
-.text-slide:first-child {
+.text-slider .slick-slide {
   display: block;
+  text-align: center;
 }
 </style>
 
-<div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
-
+<div class="yotpo yotpo-main-widget"
+     data-product-id="{{ product.id }}"
+     data-name="{{ product.title | escape }}"
+     data-url="{{ shop.url }}{{ product.url }}"
+     data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}"
+     data-description="{{ product.description | escape }}"
+     data-price="{{ variant.price | money_without_currency }}"
+     data-currency="{{ shop.currency }}">
+</div>

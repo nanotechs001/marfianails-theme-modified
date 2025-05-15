@@ -6,6 +6,9 @@
 .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(2) {
     background: #fff1f1;
 }
+div#shopify-section-product-recommendations .index-section {
+    padding-bottom: 0;
+}
 div.yotpo.bottomLine .pull-left {
     display: flex !important;
     flex-direction: row;

@@ -514,6 +514,9 @@
       },
       "collection-header": {
         "type": "collection-header",
+        "custom_css": [
+          "h1.section-header__title {color: #fff;}"
+        ],
         "settings": {
           "enable": true,
           "collection_image_enable": true,

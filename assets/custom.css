@@ -106,7 +106,7 @@ body .yotpo.yotpo-main-widget {
     padding: 0;
 }
 }
-@media only screen and (max: 768px) {
+@media only screen and (max-width: 768px) {
 .standalone-bottomline {
     display: flex;
     justify-content: center;

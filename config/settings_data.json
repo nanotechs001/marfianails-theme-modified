@@ -516,7 +516,7 @@
         "type": "collection-header",
         "custom_css": [
           "h1.section-header__title {color: #fff;}",
-          ".collection-hero__content:before{opacity: 0.6;}"
+          ".collection-hero__content:before {opacity: 0.6;}"
         ],
         "settings": {
           "enable": true,
@@ -1027,7 +1027,7 @@
             "settings": {
               "link": "shopify://collections/nailcation-press-on-nails",
               "text": "New Nailcation",
-              "image": "shopify://shop_images/feature_1.jpg",
+              "image": "shopify://shop_images/ONSN1916.jpg",
               "width": "33",
               "height": 760,
               "color_tint": "#000000",
@@ -1040,7 +1040,7 @@
             "settings": {
               "link": "shopify://collections/everyday-press-on-nails-1",
               "text": "Instant Press on Nails",
-              "image": "shopify://shop_images/model-demonstrating-bracelet-isolated-gray.jpg",
+              "image": "shopify://shop_images/ONSN2567.jpg",
               "width": "33",
               "height": 760,
               "color_tint": "#000000",
@@ -1053,7 +1053,7 @@
             "settings": {
               "link": "shopify://collections/premium-press-on-nails",
               "text": "Premium Press on Nails",
-              "image": "shopify://shop_images/Green_Modern_Creative_Comfort_Zone_Poster.png",
+              "image": "shopify://shop_images/ONSN2262.jpg",
               "width": "33",
               "height": 760,
               "color_tint": "#000000",

@@ -180,7 +180,13 @@ div#shopify-section-1598506747424 {
 /* Mega Menu dropdown */
 
 @media only screen and (min-width: 769px) {
-  
+  /* Homepage */
+  .hero__text-shadow {
+    position: relative;
+    display: inline-block;
+    top: 120px;
+}
+  /* End Homepage */
 .site-nav__dropdown {
     background-color: #00000000 !important;
     padding: 10px 0 5px !important;

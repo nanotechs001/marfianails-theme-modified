@@ -6,6 +6,9 @@
 .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(2) {
     background: #fff1f1;
 }
+.product-single__meta img {
+    mix-blend-mode: multiply;
+}
 @media only screen and (min-width: 769px) {
 .grid__item.medium-up--one-half {
     padding: 50px 0;

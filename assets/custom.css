@@ -114,7 +114,11 @@ body .yotpo.yotpo-main-widget {
     padding-right: 10px;
 }
 }
-
+/* Collections */
+.grid-product__price--savings {
+    color: #ce7e7e !important;
+    font-weight: 600 !important;
+}
 @media only screen and (max-width: 768px) {
 .standalone-bottomline {
     display: flex;

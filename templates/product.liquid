@@ -1,8 +1,4 @@
 {% section 'product-template' %}
-
-<div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
-
-
 {% section 'product-recommendations' %}
 
 {% if collection %}
@@ -23,3 +19,5 @@
     unavailable: {{ 'products.product.unavailable' | t | json }}
   };
 </script>
+<div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
+

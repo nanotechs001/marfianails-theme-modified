@@ -13,6 +13,9 @@ div.yotpo.bottomLine .pull-left {
     margin-bottom: 5px;
     font-weight: 600;
 }
+.product__quantity label {
+    font-weight: 600;
+}
 .collapsible-trigger-btn--borders {
     font-weight: 600;
 }

@@ -9,6 +9,13 @@
 .product-single__meta img {
     mix-blend-mode: multiply;
 }
+.js-qty__adjust--minus,.js-qty__adjust--plus {
+    border-right: unset;
+    background: #111;
+}
+.js-qty__adjust .icon ,.js-qty__adjust .icon{
+    fill: #ffffff !important;
+}
 @media only screen and (min-width: 769px) {
 .grid__item.medium-up--one-half {
     padding: 50px 0;

@@ -6,6 +6,9 @@
 .modal--is-active {
     z-index: 999999 !important;
 }
+    .modal--square .modal__centered-content {
+        padding: 0 !important;
+    }
 .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(2) {
     background: #fff1f1;
 }

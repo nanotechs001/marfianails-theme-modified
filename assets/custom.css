@@ -14,7 +14,7 @@
 .cart__discount {
     color: #cc7c7c !important;
 }
-body .btn--loading {
+body .btn--loading,.btn--secondary.btn--loading:hover:before {
     color: #ffffff !important;
 }
 .modal--is-active {

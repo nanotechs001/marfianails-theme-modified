@@ -4,7 +4,11 @@
     }
 .grid-product__tag.grid-product__tag--sold-out {
     background-color: #c8c8c8 !Important;
-    color: #111;
+
+}
+.grid-product__tag--sale {
+    background-color: #cb7c7c !important;
+
 }
 /* Product CSS override */
 .modal--is-active {

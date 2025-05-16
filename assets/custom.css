@@ -2,11 +2,7 @@
 .site-header,.site-header--stuck {
         box-shadow: 0px 6px 20px #00000012;
     }
-/* Cart Sidebar */
-div#CartDrawer {
-    color: #000000 !important;
-    background-color: #fefefe !important;
-}
+
 /* Product CSS override */
 .modal--is-active {
     z-index: 999999 !important;

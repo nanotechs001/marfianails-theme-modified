@@ -11,6 +11,9 @@
 
 }
 /* Product CSS override */
+.btn--loading {
+    color: #ffffff !important;
+}
 .modal--is-active {
     z-index: 999999 !important;
 }

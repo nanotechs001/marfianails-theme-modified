@@ -223,7 +223,7 @@ body .yotpo.yotpo-main-widget {
   div#shopify-section-1598526815360 .small--hide {
     display: block !important;
 }
-  div#shopify-section-advanced_content_kkiUim .custom__item.small--one-whole.one-half.align--top-middle {
+#shopify-section-advanced_content_kkiUim .custom__item.small--one-whole.one-half.align--top-middle {
     display: flex;
     align-items: center;
 }

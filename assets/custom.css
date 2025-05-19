@@ -220,6 +220,9 @@ body .yotpo.yotpo-main-widget {
     font-weight: 600 !important;
 }
 @media only screen and (max-width: 768px) {
+  div#CollectionSection {
+    padding: 10px !important;
+}
 .standalone-bottomline {
     display: flex;
     justify-content: center;

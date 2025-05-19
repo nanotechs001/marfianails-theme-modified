@@ -295,6 +295,7 @@ div#shopify-section-1598506747424 {
   /* Testimonial */
   div#shopify-section-1598506673114 .page-width.text-center {
     padding: 0px 2px;
+    max-width: 100% !important;
 }
  .testimonials-slider.slick-initialized .slick-list.draggable {
     margin-bottom: -5%;

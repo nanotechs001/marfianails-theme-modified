@@ -220,6 +220,9 @@ body .yotpo.yotpo-main-widget {
     font-weight: 600 !important;
 }
 @media only screen and (max-width: 768px) {
+  div#shopify-section-1598526815360 .small--hide {
+    display: block !important;
+}
   div#CollectionSection {
     padding: 10px !important;
 }

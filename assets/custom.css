@@ -11,6 +11,9 @@
 
 }
 /* Collections Page */
+.collection-filter__item.collection-filter__item--sort {
+    margin-bottom: 0;
+}
 .collection-filter {
     max-width: 1360px;
     margin: auto;

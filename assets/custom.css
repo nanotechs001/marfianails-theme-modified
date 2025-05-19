@@ -11,6 +11,10 @@
 
 }
 /* Global-BG */
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
 main#MainContent {
     background-image: url(https://cdn.shopify.com/s/files/1/0464/0427/2291/files/5570818.jpg?v=1747635440);
     background-color: #ffffffde;

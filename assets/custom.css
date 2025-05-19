@@ -14,6 +14,9 @@
 #CollectionSection > div.rte > p {
     text-align: center;
 }
+.collection-filter select {
+    color: #000 !important;
+}
 .collection-filter__item.collection-filter__item--sort,
 .collection-filter__item--count{
     margin-bottom: 0 !important;

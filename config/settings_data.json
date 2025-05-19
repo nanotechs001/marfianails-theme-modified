@@ -766,6 +766,9 @@
           "1599796201937",
           "1599796347113"
         ],
+        "custom_css": [
+          ".testimonials-wrapper {background: #fff !important;}"
+        ],
         "settings": {
           "title": "Customer Reviews",
           "align_text": "center",

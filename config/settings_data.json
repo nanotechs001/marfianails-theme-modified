@@ -1175,6 +1175,9 @@
           "image_BhAMyg",
           "html_YhKjH3"
         ],
+        "custom_css": [
+          ".custom__item.small--one-whole.one-half.align--top-middle {margin-bottom: 15px;}"
+        ],
         "settings": {
           "full_width": true,
           "space_around": false
@@ -3018,8 +3021,6 @@
     }
   },
   "platform_customizations": {
-    "custom_css": [
-      ".testimonials-wrapper {background: #fff !important;}"
-    ]
+    "custom_css": []
   }
 }

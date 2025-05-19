@@ -38,6 +38,11 @@ div#shopify-section-collection-header {
 div#shopify-section-collection-header .page-width.page-content.page-content--top {
     padding-bottom: 50px;
 }
+div#CollectionSection {
+    background: #FEEDEC;
+    padding: 40px;
+    margin-bottom: 40px;
+}
 /* Global-BG */
 div#shopify-section-1598506673114 .slick-dotted.slick-slider {
     margin-bottom: 0 !important;

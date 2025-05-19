@@ -228,7 +228,7 @@ body .yotpo.yotpo-main-widget {
 }
   .testimonials-slider.slick-initialized .slick-track {
     margin-left: 10% !important;
-    margin-top: 20% !important 
+    margin-top: -20% !important 
   }
   div#CollectionSection {
     padding: 10px !important;

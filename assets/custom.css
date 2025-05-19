@@ -226,6 +226,9 @@ body .yotpo.yotpo-main-widget {
   div#shopify-section-1598506673114 .page-width.text-center {
     padding: 0;
 }
+  .testimonials-slider.slick-initialized .slick-track {
+    margin-left: 10% !important;
+  }
   div#CollectionSection {
     padding: 10px !important;
 }

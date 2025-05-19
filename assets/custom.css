@@ -12,7 +12,7 @@
 }
 /* Global-BG */
 .slick-dotted.slick-slider {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     padding-bottom: 30px;
 }
 main#MainContent {

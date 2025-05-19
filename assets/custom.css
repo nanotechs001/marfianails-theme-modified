@@ -223,6 +223,9 @@ body .yotpo.yotpo-main-widget {
   div#shopify-section-1598526815360 .small--hide {
     display: block !important;
 }
+  .shopify-section h2 {
+    font-size: 24px !important;
+}
   div#shopify-section-1598506673114 .page-width.text-center {
     padding: 0;
 }

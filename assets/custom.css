@@ -15,7 +15,7 @@
     text-align: center;
 }
 .collection-filter__item.collection-filter__item--sort {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 .collection-filter__item--count {
     text-align: left;

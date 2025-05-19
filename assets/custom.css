@@ -550,7 +550,9 @@ div#shopify-section-advanced_content_kkiUim {
 div#CollectionAjaxResult {
     background: #FFECEC;
 } */
-
+.testimonials-wrapper {
+    background: #fff;
+}
       .collection-content {
         padding-top: 70px !important;
         padding-bottom: 35px;

@@ -10,6 +10,13 @@
     background-color: #cb7c7c !important;
 
 }
+/* Banner */
+div#shopify-section-collection-header {
+    background: #000000a8;
+}
+div#shopify-section-collection-header .page-width.page-content.page-content--top {
+    padding-bottom: 50px;
+}
 /* Global-BG */
 .slick-dotted.slick-slider {
     margin-bottom: 0 !important;

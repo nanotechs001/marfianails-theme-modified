@@ -10,6 +10,27 @@
     background-color: #cb7c7c !important;
 
 }
+/* My Account Page */
+
+.grid.my-account {
+    padding: 0;
+    background: #FEEDEC;
+}
+
+.my-account .grid__item.medium-up--one-third {
+    padding: 40px;
+}
+.my-account .grid__item.medium-up--two-thirds {
+    padding: 40px;
+}
+.my-account .grid__item.medium-up--one-third {
+    padding: 40px;
+    background: #cf7e7e;
+    color: #fff;
+}
+.my-account a.text-link {
+    color: #fff;
+}
 /* Banner */
 div#shopify-section-collection-header {
     background: #000000a8;

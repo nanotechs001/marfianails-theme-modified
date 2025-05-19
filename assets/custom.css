@@ -21,6 +21,9 @@
 .collection-filter__item--count{
     margin-bottom: 0 !important;
 }
+.collection-filter {
+    margin-top: 40px !important;
+}
 .collection-filter__item--count {
     text-align: left;
     margin-bottom: 0;

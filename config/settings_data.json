@@ -3018,6 +3018,8 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      ".testimonials-wrapper {background: #fff !important;}"
+    ]
   }
 }

@@ -552,7 +552,7 @@ div#CollectionAjaxResult {
 } */
 
       .collection-content {
-        padding-top: 70px;
+        padding-top: 70px !important;
         padding-bottom: 35px;
     }
 div#CollectionAjaxResult .grid__item {

@@ -540,15 +540,16 @@ div#shopify-section-advanced_content_YEwX8M .index-section {
 }
 #shopify-section-advanced_content_kkiUim > div > div.custom__item.small--one-whole.one-half.align--center {
     padding: 6%;
-}
+/* }
 div#shopify-section-advanced_content_kkiUim {
     background: #ffecec;
 }
-
+ */
 /* Shop */
+  /* 
 div#CollectionAjaxResult {
     background: #FFECEC;
-}
+} */
 div#CollectionAjaxResult .grid__item {
     padding-left: 3px;
 }

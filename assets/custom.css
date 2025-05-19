@@ -226,6 +226,9 @@ body .yotpo.yotpo-main-widget {
   #CollectionSection .grid-product__meta > div:nth-child(2) {
     display: none !important;
 }
+  div#shopify-section-1598506673114 .slick-dotted.slick-slider {
+    margin-bottom: -80px !important;
+  }
   .shopify-section h2 {
     font-size: 24px !important;
 }

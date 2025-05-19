@@ -162,6 +162,7 @@ body .yotpo.yotpo-main-widget {
 }
   .page-content.page-content--product .grid__item.medium-up--one-half:nth-child(1) {
     padding-top: 0% !important;
+    background: #fff;
 }
   .product-single__meta {
     padding-left: 0 !important;

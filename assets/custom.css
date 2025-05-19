@@ -223,6 +223,9 @@ body .yotpo.yotpo-main-widget {
   div#CollectionSection {
     padding: 10px !important;
 }
+  div.yotpo.bottomLine .pull-left {
+    flex-direction: column !important;
+  }
 .standalone-bottomline {
     display: flex;
     justify-content: center;

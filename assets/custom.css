@@ -24,7 +24,7 @@
 .collection-filter__item--count {
     text-align: left;
     margin-bottom: 0;
-      font-family: 'Josefin Sans' !important
+      font-family: 'Josefin Sans' !important;
     font-size: 22px !important;
 }
 .collection-filter {

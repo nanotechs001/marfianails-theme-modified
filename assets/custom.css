@@ -11,6 +11,9 @@
 
 }
 /* Collections Page */
+#CollectionSection > div.rte > p {
+    text-align: center;
+}
 .collection-filter__item.collection-filter__item--sort {
     margin-bottom: 0;
 }

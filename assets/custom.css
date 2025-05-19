@@ -10,6 +10,14 @@
     background-color: #cb7c7c !important;
 
 }
+/* Global-BG */
+main#MainContent {
+    background-image: url(https://cdn.shopify.com/s/files/1/0464/0427/2291/files/5570818.jpg?v=1747635440);
+    background-color: #ffffffde;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+}
 /* Collections Page */
 #CollectionSection > div.rte > p {
     text-align: center;

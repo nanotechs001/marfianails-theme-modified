@@ -44,11 +44,12 @@ div#shopify-section-1598506673114 .slick-dotted.slick-slider {
     padding-bottom: 30px;
 }
 main#MainContent {
-    background-image: url(https://cdn.shopify.com/s/files/1/0464/0427/2291/files/5570818.jpg?v=1747635440);
+    background-image: url(https://cdn.shopify.com/s/files/1/0464/0427/2291/files/5570818.jpg?v=1747635440) ;
     background-color: #ffffffde;
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 /* Collections Page */
 #CollectionSection > div.rte > p {

@@ -10,6 +10,17 @@
     background-color: #cb7c7c !important;
 
 }
+/* Collections Page */
+.collection-filter {
+    max-width: 1360px;
+    margin: auto;
+    margin-bottom: 25px;
+    background: #cf7e7e;
+    color: #fff;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+}
 /* Product CSS override */
 .cart__discount {
     color: #cc7c7c !important;
@@ -101,6 +112,9 @@ body .yotpo.yotpo-main-widget {
     cursor: auto !important;
 }
 @media only screen and (min-width: 769px) {
+  .collection-filter {
+    margin-right: 10px;
+  }
 .grid__item.medium-up--one-half {
     padding: 50px 0;
 }

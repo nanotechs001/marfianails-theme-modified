@@ -618,6 +618,12 @@ div#CollectionAjaxResult .grid {
   .shopify-section h2 {
     font-size: 1.8em !important;
 }
+    ._appEmbed_3eyaa_1:not([data-position="bottom-middle"]) {
+        transform: unset !important;
+        right: -7px !important;
+        bottom: unset;
+        top: 79% !important;
+}
 }
 div#shopify-section-1598506673114 .page-width.text-center {
     max-width: 100% !important;

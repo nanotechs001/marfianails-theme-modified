@@ -1201,6 +1201,9 @@
         "block_order": [
           "html_dLQLxM"
         ],
+        "custom_css": [
+          ".index-section {padding: 0;}"
+        ],
         "name": "Custom content",
         "settings": {
           "full_width": false,

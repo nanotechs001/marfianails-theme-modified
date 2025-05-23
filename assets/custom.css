@@ -626,3 +626,9 @@ div#CollectionAjaxResult .grid {
 div#shopify-section-1598506673114 .page-width.text-center {
     max-width: 100% !important;
 }
+
+div#shopify-section-footer {
+    z-index: 999999;
+    position: relative;
+}
+  

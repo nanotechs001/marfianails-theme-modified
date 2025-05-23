@@ -1202,6 +1202,7 @@
           "html_dLQLxM"
         ],
         "custom_css": [
+          ".index-section>div {max-width: 100%; padding: 0 !important; margin-bottom: -93px;}",
           ".index-section {padding: 0;}"
         ],
         "name": "Custom content",

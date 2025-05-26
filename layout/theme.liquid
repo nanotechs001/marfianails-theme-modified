@@ -210,9 +210,9 @@ var afterpay_cart_total_price = {{ cart.total_price | json }};
 var afterpay_js_snippet_version = '1.0.8';
 
 // Override the promo popup
-  const formEmbed = document.querySelector('#app-embed-container-207617');
+const injectMobileStyle = (formEmbed) => {
+  if (window.innerWidth > 600 || !formEmbed?.shadowRoot) return;
 
-if (window.innerWidth <= 600 && formEmbed?.shadowRoot) {
   const shadow = formEmbed.shadowRoot;
 
   const mobileStyles = new CSSStyleSheet();
@@ -221,13 +221,26 @@ if (window.innerWidth <= 600 && formEmbed?.shadowRoot) {
       #app-embed {
         top: 85% !important;
         right: -10px !important;
-    }
       }
     }
   `);
 
   shadow.adoptedStyleSheets = [...shadow.adoptedStyleSheets, mobileStyles];
-}
+};
+
+// Watch for the embed to appear in the DOM
+const observer = new MutationObserver(() => {
+  const formEmbed = document.querySelector('#app-embed-container-207617');
+  if (formEmbed && formEmbed.shadowRoot) {
+    injectMobileStyle(formEmbed);
+    observer.disconnect(); // Stop watching once done
+  }
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});
 
 
   

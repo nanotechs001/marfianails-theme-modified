@@ -7,10 +7,59 @@
 
   {% if section.blocks.size > 0 %}
     <div class="slideshow-wrapper">
+      {% if section.settings.video_url != blank %}
+        <div class="video-background-wrapper">
+          <video 
+            class="video-background" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+            {% if section.settings.video_cover_image != blank %}
+              poster="{{ section.settings.video_cover_image | img_url: '2000x' }}"
+            {% endif %}>
+            <source src="{{ section.settings.video_url }}" type="video/mp4">
+          </video>
+        </div>
+      {% endif %}
+
       {% if section.settings.autoplay and section.settings.style == 'bars' and section.blocks.size > 1 %}
         {% style %}
           .slick-slider[data-bars][data-autoplay="true"] .slick-dots li.slick-active button::before {
             animation-duration: {{ section.settings.autoplay_speed | times: 1000 }}ms;
+          }
+        {% endstyle %}
+
+        {% style %}
+          .video-background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+          }
+          
+          .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+          }
+          
+          .slideshow-wrapper {
+            position: relative;
+          }
+          
+          .slideshow-wrapper:has(.video-background-wrapper) .hero__text-wrap {
+            position: relative;
+            z-index: 1;
           }
         {% endstyle %}
 
@@ -243,6 +292,22 @@
     "class": "index-section--hero",
     "max_blocks": 5,
     "settings": [
+      {
+        "type": "header",
+        "content": "Background Video"
+      },
+      {
+        "type": "url",
+        "id": "video_url",
+        "label": "Video URL",
+        "info": "MP4 format recommended"
+      },
+      {
+        "type": "image_picker",
+        "id": "video_cover_image",
+        "label": "Video Cover Image",
+        "info": "Shown while video is loading"
+      },
       {
         "type": "select",
         "id": "section_height",

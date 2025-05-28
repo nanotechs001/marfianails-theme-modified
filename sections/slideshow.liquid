@@ -135,6 +135,12 @@
                   }
                 }
 
+                {% if block.settings.overlay_color != blank %}
+                  .slideshow__slide--{{ block.id }} .hero {
+                    background: {{ block.settings.overlay_color }};
+                  }
+                {% endif %}
+
                 {% unless block.settings.color_accent contains 'rgba(0,0,0,0)' %}
                   .slideshow__slide--{{ block.id }} .btn {
                     background: {{ block.settings.color_accent }} !important;
@@ -425,6 +431,13 @@
         "type": "image",
         "name": "Slide",
         "settings": [
+          {
+            "type": "color",
+            "id": "overlay_color",
+            "label": "Slide Overlay Color",
+            "default": "#0f0f0fe0",
+            "info": "Adds a color overlay to the slide"
+          },
           {
             "type": "text",
             "id": "top_subheading",

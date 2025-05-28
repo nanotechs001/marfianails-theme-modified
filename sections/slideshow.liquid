@@ -141,6 +141,12 @@
                   }
                 {% endif %}
 
+                {% if block.settings.enable_transparent %}
+                  .slideshow__slide--{{ block.id }} .placeholder-svg {
+                    display: none;
+                  }
+                {% endif %}
+
                 {% unless block.settings.color_accent contains 'rgba(0,0,0,0)' %}
                   .slideshow__slide--{{ block.id }} .btn {
                     background: {{ block.settings.color_accent }} !important;
@@ -431,6 +437,13 @@
         "type": "image",
         "name": "Slide",
         "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_transparent",
+            "label": "Enable Transparent Background",
+            "default": false,
+            "info": "Hides the placeholder image when no image is set"
+          },
           {
             "type": "color",
             "id": "overlay_color",

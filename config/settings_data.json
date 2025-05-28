@@ -870,7 +870,7 @@
           "87937a83-0a71-4a93-b3f8-5e9f2a911621": {
             "type": "image",
             "settings": {
-              "enable_transparent": false,
+              "enable_transparent": true,
               "top_subheading": "Limited Time Offer!",
               "title": "30% OFF SITEWIDE!",
               "title_size": 80,

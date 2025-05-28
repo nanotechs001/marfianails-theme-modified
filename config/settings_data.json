@@ -797,6 +797,8 @@
             "type": "image",
             "disabled": true,
             "settings": {
+              "enable_transparent": false,
+              "overlay_color": "#0f0f0fe0",
               "top_subheading": "",
               "title": "",
               "title_size": 57,
@@ -815,6 +817,8 @@
             "type": "image",
             "disabled": true,
             "settings": {
+              "enable_transparent": false,
+              "overlay_color": "#0f0f0fe0",
               "top_subheading": "",
               "title": "",
               "title_size": 40,
@@ -833,6 +837,8 @@
             "type": "image",
             "disabled": true,
             "settings": {
+              "enable_transparent": false,
+              "overlay_color": "#0f0f0fe0",
               "top_subheading": "",
               "title": "",
               "title_size": 80,
@@ -850,6 +856,8 @@
           "12c0437b-c97e-4fef-bec4-e40379a46639": {
             "type": "image",
             "settings": {
+              "enable_transparent": true,
+              "overlay_color": "#676060e0",
               "top_subheading": "MARFIA BEAUTY",
               "title": "PRESS ON NAILS",
               "title_size": 80,
@@ -866,6 +874,8 @@
           "87937a83-0a71-4a93-b3f8-5e9f2a911621": {
             "type": "image",
             "settings": {
+              "enable_transparent": false,
+              "overlay_color": "#0f0f0fe0",
               "top_subheading": "Limited Time Offer!",
               "title": "30% OFF SITEWIDE!",
               "title_size": 80,

@@ -860,7 +860,6 @@
               "link_text_2": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/b0866a2f-f97a-4c42-90bf-47584ce46089_1.jpg",
               "focal_point": "center center"
             }
           },
@@ -877,7 +876,6 @@
               "link_text_2": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-center",
-              "image": "shopify://shop_images/b0866a2f-f97a-4c42-90bf-47584ce46089_2.jpg",
               "focal_point": "center center"
             }
           }
@@ -894,6 +892,7 @@
           ".animation-contents {font-family: \"Poppins\";}"
         ],
         "settings": {
+          "video_url": "https://cdn.shopify.com/videos/c/o/v/9346d89825f544e0a515f0585b79c95f.mp4",
           "section_height": "100vh",
           "mobile_height": "auto",
           "parallax": false,
@@ -1202,10 +1201,9 @@
           "html_dLQLxM"
         ],
         "custom_css": [
-          ".index-section>div {max-width: 100%; padding: 0 !important; margin-bottom: -93px;}",
+          ".index-section > div {max-width: 100%; padding: 0 !important; margin-bottom: -93px;}",
           ".index-section {padding: 0;}"
         ],
-        "name": "Custom content",
         "settings": {
           "full_width": false,
           "space_around": true

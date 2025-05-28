@@ -135,9 +135,9 @@
                   }
                 }
 
-                {% if block.settings.overlay_color != blank %}
-                  .slideshow__slide--{{ block.id }} .hero {
-                    background: {{ block.settings.overlay_color }};
+                {% if section.settings.overlay_color != blank %}
+                  .hero {
+                    background: {{ section.settings.overlay_color }} !important;
                   }
                 {% endif %}
 
@@ -321,6 +321,13 @@
         "info": "Shown while video is loading"
       },
       {
+        "type": "color_background",
+        "id": "overlay_color",
+        "label": "Slide Overlay Color",
+        "default": "rgba(15, 15, 15, 0.88)",
+        "info": "Adds a color overlay to all slides"
+      },
+      {
         "type": "select",
         "id": "section_height",
         "label": "Desktop height",
@@ -443,13 +450,6 @@
             "label": "Enable Transparent Background",
             "default": false,
             "info": "Hides the placeholder image when no image is set"
-          },
-          {
-            "type": "color",
-            "id": "overlay_color",
-            "label": "Slide Overlay Color",
-            "default": "#0f0f0fe0",
-            "info": "Adds a color overlay to the slide"
           },
           {
             "type": "text",

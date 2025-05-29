@@ -1,3 +1,6 @@
+div#CollectionSection > .rte {
+    display: none;
+}
 div#trustedsite-tm-image {
     display: none;
 }

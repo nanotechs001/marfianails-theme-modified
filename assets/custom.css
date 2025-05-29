@@ -4,6 +4,12 @@ div#CollectionSection > .rte {
 div#trustedsite-tm-image {
     display: none;
 }
+#CollectionSection > div.collection-filter{
+      margin-top: 0 !important;
+}
+#CollectionSection > hr {
+    display: none;
+}
 /* Header */
 .site-header,.site-header--stuck {
         box-shadow: 0px 6px 20px #00000012;

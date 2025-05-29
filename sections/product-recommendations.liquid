@@ -63,15 +63,12 @@
         <div class="grid-overflow-wrapper">
           {% if recommend_products %}
             <div class="product-recommendations-placeholder">
-              {% comment %}
-                This content is visually hidden and replaced when recommended
-                products show up
-              {% endcomment %}
               <div class="grid grid--uniform visually-invisible" aria-hidden="true">
-                {% include 'product-grid-item' %}
+                <!-- Placeholder for dynamic recommendations -->
               </div>
             </div>
           {% endif %}
+
           {% if related_collection.products_count > 1 %}
             <div class="product-recommendations">
               <div class="grid grid--uniform" data-aos="overflow__animation">
@@ -84,11 +81,27 @@
                   {% else %}
                     {%- assign related_count = related_count | plus: 1 -%}
                     {% unless related_count > number_of_products %}
-                      {% if forloop.last and current_product_found %}
-                        {% include 'product-grid-item' %}
-                      {% else %}
-                        {% include 'product-grid-item' %}
-                      {% endif %}
+                      <div class="grid__item {{ grid_item_width }}">
+                        <div class="card-wrapper underline-links-hover">
+                          <a href="{{ product.url }}" class="full-unstyled-link">
+                            <div class="card card--product">
+                              <div class="card__media">
+                                {% if product.metafields.custom.dev_image != blank %}
+                                  <img src="{{ product.metafields.custom.dev_image | file_url }}" alt="{{ product.title }}" class="card__image">
+                                {% else %}
+                                  <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}" class="card__image">
+                                {% endif %}
+                              </div>
+                              <div class="card__content">
+                                <h4 class="card__heading">{{ product.title }}</h4>
+                                <div class="card__price">
+                                  {{ product.price | money }}
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
                     {% endunless %}
                   {% endif %}
                 {% endfor %}

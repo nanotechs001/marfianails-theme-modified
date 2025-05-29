@@ -520,7 +520,7 @@
         ],
         "settings": {
           "enable": true,
-          "collection_image_enable": true,
+          "collection_image_enable": false,
           "parallax": false
         }
       },

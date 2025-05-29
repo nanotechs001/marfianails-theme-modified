@@ -2,6 +2,9 @@ div#CollectionSection img.grid-product__image {
     object-fit: cover;
     aspect-ratio: 1 / 1;
 }
+div#CollectionSection .image-wrap {
+    padding-bottom: 97% !important;
+}
 
 div#CollectionSection > .rte {
     display: none;

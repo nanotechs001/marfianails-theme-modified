@@ -10,6 +10,10 @@
       <div class="product__main-photos" data-aos>
         <div id="ProductPhotos-{{ section_id }}">
           {%- for image in product.images -%}
+            {%- if forloop.first and product.metafields.custom.dev_image != blank -%}
+              {%- continue -%}
+            {%- endif -%}
+
             {%- assign is_featured = false -%}
             {%- if featured_image == image -%}
               {%- assign is_featured = true -%}

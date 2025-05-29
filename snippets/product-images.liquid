@@ -25,10 +25,14 @@
             </div>
           {%- endif -%}
 
-          {%- assign dev_image_offset = product.metafields.custom.dev_image != blank -%}
+          {%- if product.metafields.custom.dev_image != blank -%}
+            {%- assign dev_image_offset = 1 -%}
+          {%- else -%}
+            {%- assign dev_image_offset = 0 -%}
+          {%- endif -%}
 
           {%- for image in product.images -%}
-            {%- if forloop.first and dev_image_offset -%}
+            {%- if forloop.first and dev_image_offset == 1 -%}
               {%- continue -%}
             {%- endif -%}
 
@@ -117,7 +121,7 @@
         {%- endif -%}
 
         {%- for image in product.images -%}
-          {%- if forloop.first and product.metafields.custom.dev_image != blank -%}
+          {%- if forloop.first and dev_image_offset == 1 -%}
             {%- continue -%}
           {%- endif -%}
 

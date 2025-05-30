@@ -233,6 +233,9 @@ body .yotpo.yotpo-main-widget {
     padding-left: 5px !important;
     padding-right: 0px;
 }
+  .grid.grid--uniform.grid--collection {
+    margin: 0 0 0 -10px !important;
+}
 }
 /* Collections */
 .grid-product__price--savings {

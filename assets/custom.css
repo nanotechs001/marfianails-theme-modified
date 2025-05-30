@@ -100,7 +100,7 @@ main#MainContent {
     max-width: 1360px;
     margin: auto;
     margin-bottom: 50px;
-    background: #cf7e7e;
+    /* background: #cf7e7e; */
     color: #fff;
     padding: 11px;
     display: flex;

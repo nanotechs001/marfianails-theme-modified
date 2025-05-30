@@ -230,8 +230,8 @@ body .yotpo.yotpo-main-widget {
 }
   /* Collections Pages */
   div#CollectionAjaxResult .grid__item {
-    padding-left: 20px !important;
-    padding-right: 10px;
+    padding-left: 5px !important;
+    padding-right: 0px;
 }
 }
 /* Collections */

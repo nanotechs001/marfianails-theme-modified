@@ -898,7 +898,7 @@
         ],
         "settings": {
           "video_url": "https://cdn.shopify.com/videos/c/o/v/9346d89825f544e0a515f0585b79c95f.mp4",
-          "overlay_color": "rgba(15, 15, 15, 0.6)",
+          "overlay_color": "rgba(15, 15, 15, 0.8)",
           "section_height": "100vh",
           "mobile_height": "auto",
           "parallax": false,

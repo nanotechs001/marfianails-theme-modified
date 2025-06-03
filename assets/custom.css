@@ -52,6 +52,9 @@ div#trustedsite-tm-image {
     color: #fff;
 }
 /* Banner */
+.hero__image-wrapper:before, .hero__media:before {
+    background-color: #00000000 !important;
+}
 div#shopify-section-collection-header {
     background: #000000a8;
 }

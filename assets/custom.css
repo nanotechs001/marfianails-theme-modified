@@ -478,7 +478,7 @@ div#shopify-section-1598506747424 {
     z-index: 3;
     opacity: 1 !important;
 }
-.image-wrap img:not([role=presentation]), .image-wrap svg, .image-wrap .animate-me {
+.testimonials-slide img{
     aspect-ratio: 4/6;
     object-fit: cover;
 }

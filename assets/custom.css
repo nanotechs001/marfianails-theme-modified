@@ -203,6 +203,9 @@ body .yotpo.yotpo-main-widget {
   .collection-filter {
     margin-right: 10px;
   }
+  .hero--100vh {
+    min-height: 90vh;
+}
 .grid__item.medium-up--one-half {
     padding: 50px 0;
 }

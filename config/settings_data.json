@@ -854,12 +854,12 @@
             "type": "image",
             "settings": {
               "enable_transparent": true,
-              "top_subheading": "MARFIA BEAUTY",
-              "title": "PRESS ON NAILS",
+              "top_subheading": "MARFIA BEAUTY • WHILE STOCKS LAST",
+              "title": "70% OFF PRESS-ON NAILS",
               "title_size": 80,
-              "subheading": "Elevate your style effortlessly with Marfia Beauty Press-On Nails. 🌸 Discover your perfect match today—because chic starts at your fingertips!",
+              "subheading": "Salon-worthy nails for every mood. Without the salon price.",
               "link": "shopify://collections/everyday-press-on-nails-1",
-              "link_text": "Shop Now",
+              "link_text": "Shop The Edit",
               "link_2": "shopify://collections/everyday-press-on-nails-1",
               "link_text_2": "",
               "color_accent": "#ffffff",
@@ -871,10 +871,10 @@
             "type": "image",
             "settings": {
               "enable_transparent": true,
-              "top_subheading": "Limited Time Offer!",
-              "title": "30% OFF SITEWIDE!",
+              "top_subheading": "WHILE STOCKS LAST",
+              "title": "70% OFF PRESS-ON NAILS",
               "title_size": 80,
-              "subheading": "Code BEAUTY30 Auto-applied at Checkout.",
+              "subheading": "Discount auto-applied at checkout.",
               "link": "shopify://collections/shop-all",
               "link_text": "Shop Now",
               "link_2": "",
@@ -1232,12 +1232,12 @@
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": true,
         "settings": {
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!",
           "button_color": "#000000",
           "button_icon": "chat_bubble",
           "button_text": "chat_with_us",
           "button_horizontal_position": "bottom_right",
-          "button_vertical_position": "lowest",
-          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+          "button_vertical_position": "lowest"
         }
       },
       "7570552984445421165": {

@@ -98,6 +98,41 @@
       {% endraw %}{% endif %}{% raw %}
     </div>
     <div class="drawer__footer drawer__footer--fixed appear-animation appear-delay-{{lastAnimationRow}}">
+
+{{#if freeShippingEligible}}
+<div style="background:#604746;color:#FFFFFF;border-radius:6px;padding:12px 10px;margin-bottom:15px;text-align:center;font-size:13px;line-height:1.5;">
+
+  {{#if freeShippingReached}}
+    <div style="font-weight:600;">
+      You've unlocked FREE shipping! ♡
+    </div>
+  {{else}}
+    <div>
+      You're only
+      <strong style="color:#FFD080;">
+        ${{freeShippingRemaining}}
+      </strong>
+      away from FREE shipping!
+    </div>
+  {{/if}}
+
+  <div role="progressbar"
+       aria-label="Free shipping progress"
+       aria-valuemin="0"
+       aria-valuemax="100"
+       aria-valuenow="{{freeShippingProgress}}"
+       style="background:#947D79;height:6px;border-radius:10px;overflow:hidden;margin:10px 0 7px;">
+
+    <div style="background:#FFD080;width:{{freeShippingProgress}}%;height:6px;border-radius:10px;"></div>
+
+  </div>
+
+  <div style="font-size:10px;color:#FFFFFF;">
+    Australian standard delivery
+  </div>
+
+</div>
+{{/if}}
       {{#if cartDiscounts }}
         <div class="grid grid--full">
           <div class="grid__item one-half">

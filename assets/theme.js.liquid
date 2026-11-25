@@ -1276,8 +1276,13 @@ lazySizesConfig.expFactor = 4;
             note: cart.note,
             lastAnimationRow: animation_row,
             cartDiscounts: cart.cart_level_discount_applications,
-            cartDiscountsApplied: cart.cart_level_discount_applications.length === 0 ? false : true,
-            totalPrice: theme.Currency.formatMoney(cart.total_price, theme.settings.moneyFormat)
+            cartDiscountsApplied: cart.cart_level_discount_applications.length === 0 ? false : true,       
+totalPrice: theme.Currency.formatMoney(cart.total_price, theme.settings.moneyFormat),
+freeShippingEligible: cart.currency === 'AUD',
+freeShippingReached: cart.total_price >= 7500,
+freeShippingRemaining: (Math.max(0, 7500 - cart.total_price) / 100).toFixed(2),
+freeShippingProgress: Math.min(100, (cart.total_price / 7500) * 100)
+
           };
   
           $(selectors.container).append(this.template(data));
